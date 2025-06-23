@@ -1,0 +1,138 @@
+.feature-section {
+  padding: 100px 0;
+  // background: var(--bg-body);
+  position: relative;
+
+  @include desktop-small {
+    padding: 60px 0;
+  }
+
+  .feature-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+
+    .features-header-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
+      width: 50%;
+
+      @include desktop-small {
+        width: 100%;
+      }
+
+      .title {
+        @include typography("display-lg", "semibold");
+        font-family: var(--secondary-font);
+
+        @include desktop-small {
+          @include typography("display-md", "semibold");
+        }
+
+        span{
+          @include typography("display-lg", "semibold");
+          font-family: var(--secondary-font);
+          color: var(--color-primary);
+
+          @include desktop-small {
+            @include typography("display-md", "semibold");
+          }
+        }
+      }
+
+      .description {
+        p {
+          @include typography("text-lg", "regular");
+        }
+      }
+    }
+
+    .features-wrapper {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+
+      @include desktop-small {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .features-img {
+        max-width: 340px;
+        width: 100%;
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include desktop-small {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          max-height: 484px;
+        }
+      }
+
+      .features-content-wrapper {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+
+        // @include desktop-small {
+        //   gap: 20px;
+        // }
+
+        .feature-item {
+          flex: 1;
+          transition: 1s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          padding: 20px;
+          // color: var(--color-white);
+          // border: 1px solid var(--color-secondary);
+          border-radius: 24px;
+          background: var(--color-tertiary);
+          // background-image: url("../../images/fe_card_bg.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+
+          .feature-image {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 19px;
+
+            img {
+              @include desktop-xl {
+                width: 100%;
+              }
+            }
+          }
+
+          .feature-title {
+            @include typography("display-sm", "bold");
+            font-family: var(--secondary-font);
+            color: var(--color-text-dark);
+            height: auto !important;
+          }
+
+          .feature-description {
+            @include typography("text-md", "regular");
+            color: var(--color-text-light);
+          }
+        }
+      }
+    }
+  }
+}

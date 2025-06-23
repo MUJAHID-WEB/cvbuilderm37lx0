@@ -1,0 +1,86 @@
+title: About listing
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          
+
+          fields:
+            header.contents.title.translatable:
+              type: text
+              label: About Listing Title
+              classess: 'translatable'
+
+            header.contents.subtitle.translatable:
+              type: text
+              label: About Listing Sub Title
+              classess: 'translatable'
+
+            header.contents.description.translatable:
+              type: textarea
+              label: About Listing description
+              classess: 'translatable'
+
+            header.contents.buttons:
+                  type: list
+                  label: Hero Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+
+            header.about_sections_section:
+              # ordering@: 4
+              type: section
+              title: Contents List
+              underline: true
+              label: true
+              fields:
+                header.about_sections:
+                  type: list
+                  fields:
+      
+                    .tab_title.translatable:
+                      type: text
+                      label: Tab Title
+                      classes: 'translatable'
+                    .icon:
+                      type: pagemediaselect
+                      label: Image
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+
+                    .about_card:
+                      type: list
+                      label:  Listing Items
+                      fields:
+                        .title.translatable:
+                          type: text
+                          label: Title
+                          classes: 'translatable'
+                        
+                        .description.translatable:
+                          type: textarea
+                          label: Description
+                          classes: 'translatable'
+
+
+            header.media_order:
+                ordering@: 99
+
+

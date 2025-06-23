@@ -1,0 +1,68 @@
+title: Feature listing
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:
+                header.contents.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+
+                header.contents.image:
+                  type: pagemediaselect
+                  label: Image
+                  preview_images: true
+
+                header.balance.subtitle.translatable:
+                  type: text
+                  label: Subtitle
+                  classes: 'translatable'
+
+                header.balance.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                
+                header.balance.percent_left.translatable:
+                  type: text
+                  label: Percent Left
+
+                header.balance.percent_right.translatable:
+                  type: text
+                  label: Percent Right
+
+            feature_blocks_section:
+              ordering@: 4
+              type: section
+              title: Feature Listing
+              underline: true
+              label: false
+              fields:
+                header.feature_blocks:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    
+                    .text.translatable:
+                      type: textarea
+                      label: Brief
+                      classes: 'translatable'
+
+            header.media_order:
+                ordering@: 99
+
+

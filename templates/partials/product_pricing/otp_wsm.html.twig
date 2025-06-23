@@ -1,0 +1,42 @@
+{% set translations = otp.translated_properties[grav.language.getLanguage] %}
+<div class="pricing">
+	<div class="pricing-content">
+		<div class="otp">
+			<div class="type flex-column">
+				<div class="type-wrap">{{ translations.name }}</div>
+
+			</div>
+
+			<p class="description">{{ translations.description }}</p>
+
+			<div class="pricing-group">
+				<div class="pricing-wrap">
+					<div class="price text-primary-color">
+						<h1>
+							{{ otp.prices.0.amount|number_format(2, '.', ',') }}
+							{{ otp.prices.0.currency }}
+
+						</h1>
+					</div>
+
+				</div>
+				{% if otp.trial_days %}
+					<div class="trial">
+						<p class="text-md font-medium text-gray-500">{{ otp.trial_days }}
+							{{ "METRICALO.TRIAL_DAYS"|t }}</p>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="benefits">
+			{% for benefit in translations.benefits %}
+				<div class="benefit">
+					<img class="check" src="{{ url('theme://images/check.svg') }}"/>
+					<div class="streamline">{{ benefit|markdown(false) }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<a class="pricing-btn button" href="{{ url(otp.purchase_url) }}">{{ "METRICALO.SIGNUP"|t }}</a>
+
+</div>

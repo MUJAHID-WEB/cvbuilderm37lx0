@@ -1,0 +1,70 @@
+{% set links = config.site.footer.links %}
+
+{% set landingLinks = links[:7] %}
+{% set homepage = grav.pages.find('/') %}
+{% set homepage_content = homepage.header.footer_content %}
+
+
+{% include 'widgets/footer-top.html.twig' %}
+
+<footer class="footer-section slide-up">
+
+	<div class="container">
+
+		<div class="footer-logo-container">
+			<div class="footer-logo-top">
+				<div class="footer-logo-area">
+					{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
+
+					{# {% set homepage = page.find('/') %}
+    				<p class="branding-text service-description">{{ homepage.content|raw }}</p> #}
+					<p class="branding-text service-description">{{ page.find('/home').header.footer.branding_text.translatable }}</p>
+
+
+					 {# <div class="policy-pages-link-area">
+
+						{% for link in links %}
+
+							{% set link_page = pages.find(link) %}
+
+							{% if link_page %}
+								{% if link_page and link_page.menu and (link_page.url == '/' ~ link_page.language ~ '/privacy-policy' or link_page.url == '/' ~ link_page.language ~ '/cookie-policy') %}
+									
+									<a rel="noopener noreferrer " class="link copyright-link" href="{{ link_page.url }}">{{ link_page.menu }}</a>
+									
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div> #}
+			
+					<div class="copyright-desktop-view">
+						{% include 'widgets/footer-card.html.twig' %}
+						
+					</div>
+				</div>
+				
+				
+
+				<div class="footer-contact-wrapper">
+					{% include 'widgets/footer-link.html.twig' %}
+					{% include 'widgets/footer-contact.html.twig' %}					
+
+					<div class="copyright-mobile-view">
+						{# {% include 'widgets/footer-card.html.twig' %} #}
+						{# {% include 'widgets/footer-copyright.html.twig' %} #}
+					</div>
+				</div>
+				
+			</div>
+
+			
+			
+		</div>
+	</div>
+	{% include 'widgets/footer-copyright.html.twig' %}
+	
+</footer>
+
+<style>
+	{% include 'partials/custom.css.twig' %}
+</style>

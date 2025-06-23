@@ -1,0 +1,111 @@
+.testimonials-section {
+  position: relative;  
+  padding: 4rem 0 10rem 0;
+  background: var(--color-secondary);
+
+  @include desktop-small {
+    padding: 4rem 1rem 6rem 1rem;
+  }
+
+  .testimonial-image {
+    position: absolute;
+    right: 3%;
+    bottom: 0;
+    z-index: 2;
+
+    @include desktop-small {
+      display: none;
+    }
+  }
+
+    .testimonials-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+
+      .head-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h2 {
+          color: var(--color-text-dark);
+          @include typography('display-lg', bold);
+
+          @include desktop-small {
+            @include typography('display-md', bold);
+          }
+        }
+
+        p {
+          @include typography('text-xl', regular);
+
+          @include desktop-small {
+            @include typography('text-lg', regular);
+          }
+        }
+      }
+    }
+
+    .testimonials-content-wrapper {
+      display: flex;
+      gap: 30px;
+
+      .item {
+        border-radius: 20px;
+        background: var(--color-white);
+        box-shadow: 0px 4px 18.3px 0px rgba(0, 0, 0, 0.12);
+
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .review-image-area {
+          img {
+            width: auto;
+          }
+        }
+
+        p {
+          @include typography('text-md', medium);
+        }
+
+        b {
+          color: var(--color-text-dark);
+          @include typography('text-sm', semibold);
+        }
+      }
+    }
+
+}
+.owl-nav {
+  margin-top: 2rem;
+  display: flex;
+  gap: 20px;
+  justify-self: center;
+  align-items: center;
+}
+.owl-carousel .owl-prev {
+  background: var(--color-white) !important;
+  border-radius: 100%;
+  background-image: url("../../images/arrow-left.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+}
+
+.owl-carousel .owl-next {
+  background: var(--color-text-dark) !important;
+  border-radius: 100%;
+  background-image: url("../../images/arrow-right.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+
+}

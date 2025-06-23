@@ -1,0 +1,15 @@
+{% set navbar_text_color = '' %}
+{% set navbar_button_style = 'button' %}
+
+<header class="header " id="header">
+	<div class="container">
+		<div class="header-wrapper" id="header-wrapper">
+			<div class="header_left">
+				{% include 'widgets/logo.html.twig' with { position: 'header' } %}			
+				{% include 'widgets/menu.html.twig' %}
+			</div>
+			{% include 'widgets/header-button.html.twig' %}
+		</div>
+		<!-- End header-wrapper -->
+	</div>	
+</header>

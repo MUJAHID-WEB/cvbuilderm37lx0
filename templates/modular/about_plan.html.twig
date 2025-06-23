@@ -1,0 +1,48 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.hero %}
+{% block render_block %}
+	{% set image = page.media[page.header.hero.image] %}
+	{% set left_image = page.media[page.header.hero.left_image] %}
+
+	{% set bg = page.media[page.header.hero.hero_bg].url ?? '' %}
+	<div class="about_plan {{ module.size == 'medium' ? 'medium' : '' }}" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+		<div class="container hero-container {{ module.classes }}">
+
+			{% if left_image != '' %}
+				<div class="hero-image-left flex-on-lg">
+					<img class="" src="{{ left_image.url }}" alt="icon"/>
+
+				</div>
+			{% endif %}
+
+			<div class="hero-text {{ module.classes == 'text_image_center' ? 'hero_text_center' : 'hero_text_left' }}">
+				<h1 class="hero-title">
+					{{ module.h1.translatable|striptags('<span>')|raw }}
+				</h1>
+				{# <div class="hero-image hidden-on-lg"><img class="zoom-in-image" src="{{ image.url }}" alt="icon"/></div> #}
+				<p class="">{{ module.text.translatable }}</p>
+
+				<div class="hero_buttons">
+					{% for button in module.buttons  %}
+				
+					<a class="button " href="{{ button.link }}">
+						<span>{{ button.text.translatable }}</span>
+
+					</a>
+					{% endfor %}
+				</div>
+				
+			</div>
+
+			{% if image != '' %}
+				<div class="hero-image flex-on-lg">
+					<img class="" src="{{ image.url }}" alt="icon"/>
+	
+				</div>
+				
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}

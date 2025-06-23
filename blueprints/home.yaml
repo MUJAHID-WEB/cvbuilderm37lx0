@@ -1,0 +1,112 @@
+title: Dynamic Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            footer_section:
+              ordering@: 2
+              type: section
+              title: Footer Top Section
+              underline: true
+
+              fields:
+
+             
+                header.footer_top.h1.translatable:
+                  type: text
+                  label: Footer Top Header
+                  classes: 'translatable'
+                header.footer_top.text.translatable:
+                  type: textarea
+                  label: Footer Top Text
+                  classes: 'translatable'
+
+                header.footer_top.buttons:
+                  type: list
+                  label: Footer Top Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Buttonfooter
+           
+ 
+
+                header.footer.branding_text.translatable:
+                  type: text
+                  label: Branding Text
+                  classess: 'translatable'
+
+                header.login.top_title.translatable:
+                  type: text
+                  label: Login Top Title
+                  classess: 'translatable'
+
+                header.login.top_sub_title.translatable:
+                  type: text
+                  label: Login Top Sub Title
+                  classess: 'translatable'
+
+                header.forgot.top_title.translatable:
+                  type: text
+                  label: Forgot Top Title
+                  classess: 'translatable'
+
+                header.forgot.top_sub_title.translatable:
+                  type: text
+                  label: Forgot Top Sub Title
+                  classess: 'translatable'
+
+            unsub_section:
+              ordering@: 3
+              type: section
+              title: Unsubscribe Page Content
+              underline: true
+
+              fields:
+                header.unsub.title.translatable:
+                  type: text
+                  label: Title
+                  classess: 'translatable'
+
+                header.unsub.dec.translatable:
+                  type: text
+                  label: Description
+                  classess: 'translatable'
+
+
+            header.contact_blocks_section:
+              ordering@: 7
+              type: section
+              title: Contact blocks
+              underline: false
+              label: false
+              fields:
+
+                header.modules.title.translatable:
+                  type: text
+                  label: Section Title
+                  classes: 'translatable'
+
+                header.contents:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+                    .description.translatable:
+                      type: textarea
+                      label: Description
+                      classes: 'translatable'
+
+                  

@@ -1,0 +1,136 @@
+.cheeseburger-menu {
+  display: none;
+}
+
+@include desktop-small {
+  #mobile-menu-icon {
+    display: block;
+    background-image: url(../../images/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 32px;
+    padding: 8px;
+    // background-color: rgba(195, 195, 195, 0.30);
+    // border-radius: 8px;
+    margin-left: 12px;
+  }
+
+  .cheeseburger-menu {
+    display: block;
+    position: fixed;
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding: 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 32px;
+    background: var(--color-white);
+    top: 100px;
+    // border-top: 1px solid var(--bg-secondary);
+
+    transform: translateX(-100%);
+    transition: ease-in 0.2s;
+    z-index: 3;
+    display: flex;
+
+    // @include desktop-small {
+    //   border-radius: 53px;
+    // }
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    .cheeseburger-menu__close {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      height: 40px;
+      align-items: center;
+
+      span {
+        background-image: url(../../images/close.svg);
+        background-repeat: no-repeat;
+        background-size: 38px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .cheeseburger-menu__menu {
+      display: flex;
+      // padding-bottom: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+
+      &:last-child{
+        flex-direction: column;
+      }
+
+      .menu-item {
+        text-align: center;
+        padding: 12px;
+        // width: 100%;
+      }
+
+      .menu-item__link {
+        color: var(--color-text-dark);
+        @include typography(text-lg, bold);
+        text-decoration: none;
+        border-bottom: 4px solid transparent;
+
+        &:active {
+          border-color: var(--color-primary);
+        }
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background: transparent;
+        color: var(--color-white);
+        background: var(--color-black);
+        appearance: none;
+        @include typography(text-lg, bold);
+        width: fit-content;
+        // display: block;
+        // border-radius: 30px;
+
+        // &.signup{
+        //   background: var(--color-secondary);
+        //   color: var(--color-primary);
+        //   border: 1px solid var(--color-primary);
+        //   display: flex;
+        //   align-items: center;
+        // }
+
+        &.login{
+          background: var(--color-primary);
+          color: var(--color-white);
+          // border: 1px solid var(--color-primary);
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / 59%);
+    z-index: 1;
+  }
+}
+
+#cheeseburger-menu .cheeseburger-menu__menu:last-child .button:not(.login,.signup) {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+}

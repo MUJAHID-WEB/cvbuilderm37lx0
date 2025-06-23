@@ -1,0 +1,20 @@
+{{ theme['css_scripts'] }}
+.unsubscribe-section { 
+    margin: 0 !important;
+}
+
+.login-form {
+    .form-field {
+        &:first-child {
+            &::before {
+                content: "{{ 'METRICALO.USERNAME'|t }}";
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                content: "{{ 'METRICALO.PASSWORD'|t }}";
+            }
+        }
+    }
+}

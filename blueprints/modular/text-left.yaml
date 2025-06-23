@@ -1,0 +1,58 @@
+title: Text left
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            header.text_left.subtitle.translatable:
+              type: text
+              label: Sub Title
+              classess: 'translatable'
+            header.text_left.title.translatable:
+              type: text
+              label: Title
+              classess: 'translatable'
+            header.text_left.content_top_left.translatable:
+              type: text
+              label: Content Top Left
+              classess: 'translatable'
+            header.text_left.content_top_right.translatable:
+              type: text
+              label: Content Top Right
+              classess: 'translatable'
+            header.text_left.content_middle.translatable:
+              type: text
+              label: Content middle
+              classess: 'translatable'
+            header.text_left.content_last.translatable:
+              type: text
+              label: Content Last
+              classess: 'translatable'
+         
+           
+            header.text_left.image:
+              type: pagemediaselect
+              label: Image left
+          
+            header.text_left.buttons:
+                  type: list
+                  label: Text Left Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+           
+            header.media_order:
+                ordering@: 99
+
+

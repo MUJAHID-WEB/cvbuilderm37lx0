@@ -1,0 +1,64 @@
+{% set plan_translations = plan.translated_properties[grav.language.getLanguage] %}
+<div class="pricing">
+	<div class="pricing-content">
+
+		<div class="price">
+			<div class="type">
+				<div class="type-wrap">{{ plan_translations.name }}</div>
+			</div>
+			<p class="description">{{ plan_translations.description }}</p>
+
+			<div class="pricing-group">
+				<span class="pricing-wrap">
+					<div class="price text-primary-color">
+			            {{ plan.prices.0.amount|number_format(2, '.', ',') }} {{ plan.prices.0.currency }}
+
+
+					</div>
+				</span>
+
+				<span class="text-sm">/
+          {% if plan.interval_count == 1 %}
+            {% if plan.interval == 'days' %}
+              {{ 'METRICALO.DAY'|t }}
+            {% elseif plan.interval == 'weeks' %}
+              {{ 'METRICALO.WEEK'|t }}
+            {% elseif plan.interval == 'months' %}
+              {{ 'METRICALO.MONTH'|t }}
+            {% elseif plan.interval == 'years' %}
+              {{ "METRICALO.YEAR"|t }}
+            {% endif %}
+          {% else  %}
+            {{ plan.interval_count }}
+            {% if plan.interval == 'days' %}
+              {{ 'METRICALO.DAYS'|t }}
+            {% elseif plan.interval == 'weeks' %}
+              {{ 'METRICALO.WEEKS'|t }}
+            {% elseif plan.interval == 'months' %}
+              {{ 'METRICALO.MONTHS'|t }}
+            {% elseif plan.interval == 'years' %}
+              {{ "METRICALO.YEARS"|t }}
+            {% endif %}
+          {% endif %}
+				</span>
+			</div>
+
+            {% if plan.trial_days %}
+      <p class="text-md font-medium text-gray-500">{{ plan.trial_days }} {{ "METRICALO.TRIAL_DAYS"|t }}</p>
+      {% endif %}
+		</div>
+
+		<div class="benefits">
+		     {% for benefit in plan_translations.benefits %}
+				<div class="benefit">
+					<img class="check" src="{{ url('theme://images/check.svg') }}"/>
+					<div class="streamline">{{ benefit|markdown(false) }}</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+	<div>
+		<a class="pricing-btn button" href="{{ url(plan.purchase_url) }}">{{ "METRICALO.SIGNUP"|t }}</a>
+	</div>
+</div>

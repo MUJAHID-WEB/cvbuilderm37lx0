@@ -1,0 +1,69 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_right %}
+{% set image = page.media[page.header.text_right.image] %}
+{% set small_image = page.media[page.header.text_right_small.image] %}
+
+{% block render_block %}
+    <div class="paragraph text-right text-right-animation {{ module.classes }}">
+        <div class="container text-right-container">
+            <div class="left-section">
+
+                <div class="paragraph-image">
+                    <img class="" src="{{ image.url }}" alt="icon"/>
+                </div>
+                
+                <div class="left-top">
+                    
+                    <div class="left">
+
+                        <h4>{{ module.left_title.translatable|striptags('<span>')|raw }}</h4>
+                        
+                        <a href="{{ home_url|e }}{{ webdata('signup_url') }}" class="text-right-btn">{{ module.left_btn_text.translatable }}</a>
+                    </div>
+
+                    <img class="" src="{{ small_image.url }}" alt="icon"/>
+
+                </div>
+
+               
+
+            </div>
+
+            <div class="text-right-text">
+                <div class="block-title">
+                    <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                </div>
+                <p>{{ page.content|striptags('<span>')|raw }}</p>
+
+                <div class="right-buttom">
+                    
+                    <div class="left-right">
+                        <span>
+                            <img src="{{ url('theme://images/about-text-right-icon-1.svg') }}" />
+                        </span>
+                        <h4>{{ module.buttom_left_title.translatable|striptags('<span>')|raw }}</h4>
+                        <p>{{ module.buttom_left_text.translatable|striptags('<span>')|raw }}</p>
+                    </div>
+
+                    <div class="left-right">
+                        <span>
+                        <img src="{{ url('theme://images/about-text-right-icon-2.svg') }}" />
+                        </span>
+                        <h4>{{ module.buttom_right_title.translatable|striptags('<span>')|raw }}</h4>
+                        <p>{{ module.buttom_right_text.translatable|striptags('<span>')|raw }}</p>
+                    </div>
+
+                </div>
+
+                {# {% if module.buttons %}
+                    {% for button in module.buttons  %}
+                        <a class="button" href="{{ button.link }}">
+                            {{ button.text.translatable }}
+                        </a>
+                    {% endfor %}
+                {% endif %} #}
+            </div>
+        </div>
+    </div>
+{% endblock %}

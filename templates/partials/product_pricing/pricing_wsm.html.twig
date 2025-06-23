@@ -1,0 +1,24 @@
+{% set otp_count = 0 %}
+{% set plan_count = 0 %}
+{% for product in product_pricing.data %}
+	{% if product.type == 'otp' %}
+		{% set otp_count = otp_count + 1 %}
+	{% else %}
+		{% set plan_count = plan_count + product.product_plans|count %}
+	{% endif %}
+{% endfor %}
+{% for product in product_pricing.data %}
+	{% if product.type != 'otp' %}
+		{% for plan in product.product_plans %}
+			{% include 'partials/product_pricing/plan_crm.html.twig' with {features: product.benefits } %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+
+{% if otp_count > 0 %}
+	{% for product in product_pricing.data %}
+		{% if product.type == 'otp' %}
+			{% include 'partials/product_pricing/otp_wsm.html.twig' with {otp: product } %}
+		{% endif %}
+	{% endfor %}
+{% endif %}

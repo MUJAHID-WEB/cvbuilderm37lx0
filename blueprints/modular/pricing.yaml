@@ -1,0 +1,59 @@
+title: Pricing
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 2
+              type: section
+              title: Module Section
+              underline: true
+              import@:
+                type: modular/partials/module
+
+
+            header.media_order:
+                ordering@: 99
+            header.plans:
+              type: list
+              label: Plans
+              style: vertical
+              fields:
+                .title:
+                  type: text
+                  label: Plan Title
+                .features:
+                  type: array
+                  label: Plan Features
+                  value_only: true
+            header.recommended_tag:
+              type: toggle
+              label: Recommended Tag
+              highlight: 1
+              options:
+                1: 'Enabled'
+                0: 'Disabled'
+              default: 0
+              validate:
+                type: bool
+            header.recommended_text.translatable:
+              type: text
+              label: Recommended Text
+              default: Best Value
+              show_when:
+                header.recommended_tag: true
+            header.sub_title.translatable:
+              type: text
+              label: Subtitle
+              classes: 'translatable'
+            header.on_package:
+              type: text
+              label: On Package
+              placeholder: Enter the Package name where to add the tag
+              show_when:
+                header.recommended_tag: true

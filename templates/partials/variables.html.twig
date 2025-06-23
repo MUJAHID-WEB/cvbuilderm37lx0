@@ -1,0 +1,73 @@
+{% set max_width = 'max-w-7xl mx-auto w-full' %}
+{% set section_padding = 'px-4 sm:px-6 lg:px-8' %}
+{% set site_js = 'user://themes/metricalo-base/dist/js/main.js?v=3' %}
+{% set data = config.data %}
+{% block render_block %}{% endblock %}
+
+<link href="{{ url('theme://assets/css/owl.carousel.min.css') }}" rel="stylesheet" />
+{% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+{% do assets.addJs('theme://assets/js/owl.carousel.min.js', {group: 'bottom', loading: 'defer'}) %}
+
+
+
+<script>
+    window.addEventListener('load', () => {
+  const benefits = document.querySelectorAll('.benefits');
+
+  let maxHeight = 0;
+
+  benefits.forEach(el => {
+    el.style.height = 'auto';
+    const height = el.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
+
+  benefits.forEach(el => {
+    el.style.height = maxHeight + 'px';
+  });
+});
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('myVideo');
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            if (!video.src && video.dataset.src) {
+                video.src = video.dataset.src;
+                video.load();
+            }
+            
+            video.play().catch(error => {
+                console.error('Autoplay failed:', error);
+            });
+        } else {
+            video.pause();
+        }
+    }, { threshold: 0.7 });
+
+    observer.observe(video);
+
+    video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+
+    video.addEventListener('mouseenter', () => {
+        if (!video.paused) {
+            video.style.cursor = 'pointer';
+        }
+    });
+
+    video.addEventListener('mouseleave', () => {
+        video.style.cursor = 'default';
+    });
+});
+</script>

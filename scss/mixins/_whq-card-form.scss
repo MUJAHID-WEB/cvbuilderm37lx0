@@ -1,0 +1,239 @@
+.forgot-section .whq-card .whq-card-container {
+  justify-content: center;
+
+  .form-image {
+    display: none;
+  }
+
+  .whq-card-content {
+    max-width: 656px;
+  }
+}
+
+
+
+
+@mixin whq-card-form($text-color, $title-bg, $title-color, $card-shadow, $border-radius,
+  $spacing, $title_typography, $button_typography, $label_typography, $input_styles) {
+  .whq-card {
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+    margin: auto;
+    margin-bottom: $spacing !important;
+    padding: 0 !important;
+    color: $text-color;
+    //max-width: 635px;
+
+    //@include mobile {
+    //  margin-left: 1rem !important;
+    //  margin-right: 1rem !important;
+    //  //padding-left: 12px !important;
+    //  //padding-right: 12px !important;
+    //}
+
+    .whq-card-container {
+      display: flex;
+      align-items: stretch;
+      gap: 60px;
+
+      @include desktop-small {
+        flex-direction: column;
+      }
+
+      .form-image {
+        flex: 1;
+        width: 100%;
+
+        @include desktop-small {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .whq-card-title {
+        flex: 1;
+        @include typography(map-get($title_typography, size), map-get($title_typography, weight)); // Extract size & weight
+
+        padding: 42px;
+        text-align: center;
+        background: $title-bg;
+        color: $title-color;
+        border-radius: 8px 8px 0px 0px;
+
+        @include desktop-small {
+          padding: 2rem 1rem;
+        }
+      }
+
+      .whq-card-content {
+        flex: 1;
+        padding: 40px;
+
+        border-radius: 24px;
+        background: var(--color-tertiary);
+        box-shadow: 0px 3px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+        border: 1px solid var(--color-white);
+
+        .notice-container {
+          margin-bottom: 1rem;
+        }
+
+        @include desktop-small {
+          padding: 40px 16px;
+          width: 100%;
+        }
+
+        // @include tablet{
+        //   border-radius: 0px 0px 20px 20px;
+        // }
+
+
+
+        h3 {
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 60px;
+          font-family: var(--secondary-font);
+          color: var(--color-text-dark);
+          margin-bottom: 16px;
+
+          @include mobile {
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px;
+          }
+        }
+
+        p {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          color: var(--color-text-light);
+
+          // @include mobile{
+          //   font-size: 16px;
+          //   font-style: normal;
+          //   font-weight: 400;
+          //   line-height: 24px;
+          // }
+        }
+
+        form {
+          //background-color: var(--unsubscribe-bg-container);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .form-field {
+            display: block;
+            width: 100%;
+
+            .form-label {
+              margin-bottom: 0;
+
+              label {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 30px;
+                color: var(--color-text-light);
+              }
+            }
+
+            .form-data {
+              width: 100%;
+
+              .form-input-wrapper {
+                // input,
+                // textarea {
+                //   color: var(--color-text-light);
+                //   margin-bottom: 18px;
+                //   border-bottom: 1px solid var(--Webshop-5-color-text-dark, #0D0D0D);
+                //   //background: var(--Webshop-1-Secondary, #F7F5EF);
+                // }
+
+                input::placeholder,
+                textarea::placeholder {
+                  color: transparent;
+                  // color: rgba(var(--color-black), 0.5);
+                }
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus,
+                input:-webkit-autofill:active {
+                  transition: background-color 500000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+                }
+
+                // input:focus {
+                //   outline: none;
+                //   border-color: #98A2B3;
+                //   box-shadow: none;
+                // }
+
+                //input {
+                //  color: var(--color-text-light);
+                //  border-radius: 20px;
+                //  border: 1px solid var(--color-text-light, #696969);
+                //  background: var(--bg-body, #FAFAFA);
+                //  margin-bottom: 24px;
+                //}
+              }
+            }
+          }
+
+          .form-actions {
+            width: 100%;
+            text-align: center;
+            text-align: -webkit-center;
+            margin-top: calc(32px - 18px);
+
+            @include desktop-small {
+              margin-top: calc(40px - 24px);
+            }
+
+            button {
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              padding: 12px 24px !important;
+              color: var(--color-white);
+              background: var(--color-primary);
+              border: none;
+              width: 100%;
+      
+              margin: 0 auto;
+              border-radius: 30px;
+
+              &:hover {
+                transform: translateY(0) !important;
+              }
+
+              svg {
+                display: none;
+              }
+
+              @include mobile {
+                min-width: unset;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cancel-membership-section .whq-card button, .unsubscribe-section .whq-card button {
+  background: var(--color-danger) !important;
+  padding: 12px 24px !important;
+}

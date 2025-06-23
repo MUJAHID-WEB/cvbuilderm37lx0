@@ -1,0 +1,22 @@
+{% set logo_svg = url('theme://images/logo.svg') %}
+{% set logo_png = url('theme://images/logo.png') %}
+
+{% set mobile_logo = url('theme://images/mobile_logo.png') %}
+
+{% if position == 'footer' %}
+    {% set logo_svg = url('theme://images/footer-logo.svg') %}
+    {% set logo_png = url('theme://images/footer-logo.png') %}
+{% endif %}
+
+{% set logo = logo_svg %}
+{% if not logo_svg|exists %}
+    {% set logo = logo_png %}
+{% endif %}
+
+<div class="logo-container {{ position }}-logo">
+    <a href="{{ home_url|e }}">
+        <img class="logo" src="{{ logo }}" />
+
+        <img class="mobile_logo" src="{{ mobile_logo }}" />
+    </a>
+</div>

@@ -1,0 +1,74 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+
+	<div class="feature-section" id="features-section">
+
+		<div class="container">
+
+			<div class="feature-wrapper">
+				<div class="features-header-section">
+					{% if module.title %}
+						<h3 class="title section-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+					{% endif %}
+
+					<div class="description">
+						{% if page.content %}
+							{{ page.content|raw }}
+						{% endif %}
+
+					</div>
+				</div>
+
+				<div class="features-wrapper">
+					<div class="features-content-wrapper">
+						{% set features = page.header.feature_blocks|slice(0, 2) %}
+
+						{% for feature_block in features %}
+							{% if feature_block.description != '' and feature_block.title != '' %}
+
+								<div class="feature-item">
+									{% set image = page.media[feature_block.image] %}
+
+									<div class="feature-image">
+										<img class="" src="{{ image.url }}"/>
+									</div>
+									<h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+									<p class="feature-description">{{ feature_block.description.translatable }}</p>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+
+					<div class="features-img">
+						<img src={{page.media[module.feature_bg].url}}/>
+					</div>
+
+					<div class="features-content-wrapper">
+						{% set features = page.header.feature_blocks|slice(2) %}
+
+						{% for feature_block in features %}
+							{% if feature_block.description != '' and feature_block.title != '' %}
+
+								<div class="feature-item">
+									{% set image = page.media[feature_block.image] %}
+
+									<div class="feature-image">
+										<img class="" src="{{ image.url }}"/>
+									</div>
+									<h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+									<p class="feature-description">{{ feature_block.description.translatable }}</p>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

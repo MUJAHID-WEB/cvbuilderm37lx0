@@ -1,0 +1,70 @@
+.cancel-membership-section, .unsubscribe-section {
+  // background: var(--bg-body);
+  padding: 160px 0 100px;
+
+  @include desktop-small {
+    padding: 60px 0 60px 0;
+    // margin-top: $header-gap-mobile;
+  }
+
+  @include whq-card-form(
+          $text-color: var(--color-text-dark),
+          $title-bg: var(--color-tertiary),
+          $title-color: var(--color-text-light),
+          $card-shadow: none,
+          $border-radius: 8px,
+          $spacing: 5rem,
+          $title_typography: (size: display-xs, weight: regular),
+          $button_typography: (size: text-md, weight: bold),
+          $label_typography: (size: text-md, weight: bold),
+          $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
+  );
+
+  .whq-card {
+    margin: 0 0 60px 0;
+
+    @include desktop-small {
+      margin-bottom: 40px !important;
+      // margin-top: $header-gap-mobile;
+    }
+
+    #unsubscribe {
+      margin-top: 57px;
+
+      @include desktop-small {
+        margin-top: 40px;
+      }
+
+      .form-actions{
+        margin-top: 44px;
+
+        @include desktop-small {
+          // margin-top: calc(40px - 18px);
+          margin-top: 34px;
+        }
+      }
+    }
+
+    button{
+      background: var(--color-danger) !important;
+      width: fit-content !important;
+      padding: 12px 24px !important ;
+    }
+
+    // .whq-card-content{
+    //   h3{
+    //     max-width: 367px;
+    //   }
+    // }
+  }
+}
+
+.cancel-membership-section {
+  .form-actions {
+    .button {
+      width: 100%;
+      border-radius: 30px;
+      @include typography(text-md, semibold);
+    }
+  }
+}

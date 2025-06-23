@@ -1,0 +1,109 @@
+.contact-section {
+    // background: var(--color-secondary);
+    // padding-bottom: 5.625rem;
+    // padding-top: 4rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        padding: 0;
+
+        .sub_title {
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.10);
+            color: var(--color-text-dark);
+            @include typography(text-md, semibold);
+            width: fit-content;
+            padding: 8px 10px;
+        }
+
+        h2 {
+            max-width: 426px;
+            width: 100%;
+
+            @include typography(display-lg, semibold);
+            color: var(--color-text-dark);
+            font-family: var(--secondary-font);
+
+            @include desktop-small {
+                @include typography(display-md, semibold);
+            }
+
+            span {
+                @include typography(display-lg, semibold);
+                color: var(--color-primary);
+                // font-family: var(--secondary-font);
+
+                @include desktop-small {
+                    @include typography(display-md, semibold);
+                }
+            }
+
+        }
+
+
+        .all-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+            justify-content: center;
+            align-items: stretch;
+
+            @include desktop-small {
+                flex-direction: column;
+                gap: 1.625rem;
+                align-items: center
+            }
+
+            .contact {
+                display: flex;
+                gap: 16px;
+                // max-width: 364px;
+                width: 100%;
+                background: var(--color-white);
+                align-items: center;
+
+                border-radius: 12px;
+                border: 1px solid var(--color-text-dark);
+                padding: 16px;
+
+                // @include desktop-small {
+                //     flex-direction: column;
+                //     gap: 1.375rem;
+                //     align-items: center;
+                // }
+
+                .img {
+                    max-width: 60px;
+                    max-height: 60px;
+                    width: 100%;
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 474px;
+                    width: 100%;
+
+                    // @include desktop-small {
+                    //     text-align: center;
+                    // }
+
+                    p {
+                        @include typography(text-md, regular);
+                        color: var(--color-text-light);
+                    }
+
+                    h5 {
+                        @include typography(text-lg, bold);
+                        color: var(--color-text-dark);
+                        // font-family: var(--secondary-font);
+                    }
+                }
+            }
+        }
+    }
+
+}

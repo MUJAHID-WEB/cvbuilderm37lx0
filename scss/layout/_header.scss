@@ -1,0 +1,289 @@
+.page-home .header.sticky {
+  background: var(--color-white);
+}
+
+.page-dashboard .header {
+  background: var(--color-white);
+}
+
+
+.header {
+  // position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 0;
+  z-index: 10;
+  background: var(--color-white);
+
+  @include desktop-small {
+    // position: fixed;
+    z-index: 3;
+    padding: 14px 0;
+    background: transparent;
+    // border-bottom: 2px solid var(--color-primary);
+  }
+
+  &.sticky {
+    position: fixed;
+    background: var(--color-white);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    // @include desktop-small{
+    //   padding: 0;
+    // }
+
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      padding: 18px 32px;
+      border-radius: 24px;
+      background: var(--color-tertiary);
+      // gap: 70px;
+      width: 100%;
+      // max-width: 879px;
+      // border: 2px solid var(--color-primary);
+
+      @include desktop-small {
+        padding: 16px 20px;
+        border-radius: 32px;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .header_left {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        .header-logo {
+          display: flex;
+          align-items: center;
+
+          a {
+            .logo {
+              height: auto;
+              max-width: 200px;
+              display: flex;
+              align-items: center;
+
+              @include desktop-small {
+                max-width: 140px;
+                display: none;
+              }
+
+            }
+
+            .mobile_logo {
+              display: none;
+
+              @include desktop-small {
+                max-width: 140px;
+                height: auto;
+                display: flex;
+                align-items: center;
+              }
+
+            }
+
+
+          }
+        }
+
+        .menu {
+          display: flex;
+          align-items: center;
+          gap: 32px;
+          // padding: 15px 10px;
+          // border-radius: 10px;
+
+          @include desktop-small {
+            display: none;
+          }
+
+          .menu-item {
+            display: flex;
+            // padding: 12px 10px;
+            justify-content: center;
+            align-items: center;
+
+            @include desktop-small {
+              padding: 0.25rem 0.5rem;
+            }
+
+            .menu-item__link {
+
+              text-decoration: none;
+              @include typography(text-md, semibold);
+              color: var(--color-text-dark);
+              transition: all .3s ease-in-out;
+              white-space: nowrap;
+
+              /* 150% */
+              &:hover {
+                transform: translateY(-0.15rem);
+              }
+
+              @include desktop-small {
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
+
+            &.active a {
+              position: relative;
+              @include typography(text-md, bold);
+              color: var(--color-text-dark);
+
+              // &::after {
+              //   content: "";
+              //   width: 100%;
+              //   height: 2px;
+              //   background: var(--panel-header-text-active);
+              //   position: absolute;
+              //   bottom: -5px;
+              //   left: 50%;
+              //   transform: translateX(-50%);
+              //   z-index: 10;
+
+              // }
+            }
+          }
+        }
+
+      }
+
+
+      .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        // padding: 10px;
+        // border-radius: 12px;
+
+        @include desktop-small {
+          gap: 0px;
+        }
+
+        .btn {
+          padding: 10px 20px;
+
+
+          @include desktop-small {
+            display: none;
+          }
+
+        }
+
+        .active-btn {
+          // order: 2;
+
+          &:hover {
+            background: var(--color-black);
+            // color: var(--color-primary);
+          }
+        }
+
+        .signup {
+          // order: 3;
+          display: flex;
+          align-items: center;
+          transition: 1s;
+          background: var(--color-black);
+
+
+          @include desktop-small {
+            display: none;
+          }
+
+          // span {
+          //   @include typography(text-lg, semibold);
+          // }
+
+          &:hover {
+            // background: var(--color-secondary);
+            // color: var(--color-primary);
+          }
+
+          &:hover {
+
+            svg {
+              path {
+                fill: white;
+              }
+            }
+          }
+
+
+        }
+
+        .language-switcher {
+          // border-radius: 43px;
+          padding: 10px 15px;
+          color: var(--color-text-dark);
+          // order: 1;
+
+
+          @include desktop-small {
+            order: 0;
+            // border: 1px solid var(--color-gray);
+            padding: 5px 7px;
+          }
+
+          svg {
+            path {
+              fill: var(--color-black);
+
+              @include desktop-small {
+                fill: var(--color-black);
+              }
+            }
+          }
+
+          @include typography(text-md, semibold);
+
+          .lang-flag {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+          }
+        }
+
+        .cheeseburger-menu__close {
+          display: none;
+          width: 100%;
+          justify-content: flex-end;
+          align-items: center;
+
+          span {
+            background-image: url(../../images/close.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 32px;
+            width: 32px;
+            // padding: 8px;
+            // background-color: rgba(195, 195, 195, 0.30);
+            // border-radius: 8px;
+            margin-left: 12px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+  // .header-bg {
+  //   background: var(--color-primary) !important;
+  // }
+}

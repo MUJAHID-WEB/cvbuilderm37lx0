@@ -1,0 +1,74 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.contents %}
+{% set testimonial_items = page.header.carousel_feature_items %}
+{% set image = page.header.image %}
+
+{% block render_block %}
+
+	<div class="testimonials-section slide-up ">
+        <img class="testimonial-image" src="{{ page.media[image].url }}" alt="Image" />
+
+        <div class="testimonials-wrapper">
+
+            <div class="head-content"> 
+                <h2>{{ contents.title.translatable }}</h2>
+                <p>{{ contents.description.translatable }}</p>
+            </div>
+
+            <div class="testimonials-content-wrapper owl-carousel">
+
+                {% for item in testimonial_items %}
+                    <div class="item">
+                        <div class="review-image-area">
+                            <img src="{{ page.media[item.image].url }}" alt="Review"/>
+                        </div>
+
+                        <p>{{ item.description.translatable }}</p>
+                        <b>{{ item.title.translatable }}</b>
+                    </div>
+                {% endfor %}
+
+            
+            </div>
+
+        </div>
+
+	</div>
+
+
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 5,
+            loop: true,
+            margin: 24,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            smartSpeed: 450,
+            autoplayHoverPause: true,
+            lazyLoad:true,
+            nav: true,
+
+
+            responsive:{
+                0:{
+                    items: 1,
+                    nav: true
+                },
+                600:{
+                    items: 3,
+                    nav: true
+                },
+                1000:{
+                    items: 5,
+                    nav: true,
+                    loop: true
+                }
+            }
+        });
+    });
+
+</script>
+
+{% endblock %}

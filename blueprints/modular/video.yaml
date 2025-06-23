@@ -1,0 +1,19 @@
+title: Text right
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+                ordering@: 99
+            header.contents.title.translatable:
+              type: text
+              label: Title
+              classess: 'translatable'
+
+            header.contents.youtube_embed:
+              type: text
+              label: Youtube Embed Link

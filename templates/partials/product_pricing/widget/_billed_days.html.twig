@@ -1,0 +1,8 @@
+<div class="text-sm billed-days" style="margin-bottom:1rem;">{{ 'METRICALO.BILLED_EVERY'|t }}
+{{ product.pricing_plan.subscription_interval_days }}
+{% if product.pricing_plan.subscription_interval_days == 1 %}
+    {{ 'METRICALO.DAY'|t }}
+{% else %}
+    {{ 'METRICALO.DAYS'|t }}
+{% endif %}
+</div>

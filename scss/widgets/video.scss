@@ -1,0 +1,41 @@
+.video-section  {
+    border-radius: 90px 90px 0px 0px;
+    background: linear-gradient(180deg, #7F52D9 0%, #181818 100%);
+    padding: 6rem 0 3rem 0;
+
+    @include desktop-small {
+        padding: 6rem 0 3rem 0;
+    }
+
+    .video-wrapper {
+        .head-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                @include typography('display-lg', bold);
+                color: var(--color-white);
+                width: 70%;
+                margin-bottom: 4rem;
+
+                @include desktop-small {
+                    @include typography('display-md', bold);
+                    width: 100%;
+                }
+            }
+        }
+
+        .content {
+            height: 400px;
+            background: var(--color-secondary);
+            border-radius: 60px;
+
+            iframe {
+                border-radius: 60px;
+            }
+        }
+    }
+}

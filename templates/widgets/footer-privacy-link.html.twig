@@ -1,0 +1,20 @@
+<div class="footer-menu">
+    
+    <div class="frame-24">
+        {% for link in privacyLinks %}
+            {% set link_page = pages.find(link) %}
+            {% if link_page %}
+
+                {% if link_page and link_page.menu and (link_page.menu == 'Pricing' 
+                    or link_page.menu == 'Subscription & cancellation policy' 
+                    or link_page.menu == 'Unsubscribe') %}
+
+                    <div class="menu-item">
+                        <a rel="noopener noreferrer" class="" href="{{ link_page.url|replace({'%23': '#'}) }}">{{ link_page.menu }}</a>
+                    </div>
+                {% endif %}
+
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,77 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.hero %}
+
+{% block render_block %}
+    <section class="hero-section" id="hero-section">
+		<div class="container">
+			<div class="hero-wrapper slide-in">
+				<div class="text-contents">
+					<div class="hero-content-head">
+
+						{% if contents.title != null %}
+							<h1 class="hero-title">{{ contents.title.translatable|raw }}</h1>
+						{% endif %}
+
+						{% if contents.text != null %}
+							<p>{{ contents.text.translatable|raw }}</p>
+						{% endif %}
+					</div>
+
+					<div class="hero-buttons">
+						{% for button in contents.buttons %}
+							<a class="button slide-in {{ button.btn_class }}"
+							href="/{{ grav.language.getActive }}{{ button.link }}">
+								{{ button.text.translatable }}
+
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							</a>
+						{% endfor %}
+					</div>
+				</div>
+
+				{% if contents.image %}
+					<div class="image-contents">
+						<img class="image_main_mobile" src="{{ page.media[contents.image].url }}" alt="Hero Image"/>
+
+						<img class="image_top" src="{{ url('theme://images/hero_img_top.png') }}" />
+
+						{# <img class="image_btm" src="{{ url('theme://images/hero_img_btm.png') }}" /> #}
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="hero-content-wrapper">
+
+				<div class="content_part">
+					{% set hero_blocks = page.header.hero_blocks %}
+
+					{% for hero_block in hero_blocks %}
+						{% if hero_block.description != '' and hero_block.title != '' %}
+
+							<div class="feature-item">
+								{% set image = page.media[hero_block.image] %}
+
+								<div class="feature-image">
+									<img class="" src="{{ image.url }}"/>
+								</div>
+								<h4 class="feature-title">{{ hero_block.title.translatable }}</h4>
+								<p class="feature-description">{{ hero_block.description.translatable }}</p>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+
+				<div class="image_part">
+					<img class="image_main" src="{{ page.media[contents.image].url }}" alt="Hero Image"/>
+
+				</div>
+			
+			</div>
+
+
+		</div>
+    </section>
+{% endblock %}

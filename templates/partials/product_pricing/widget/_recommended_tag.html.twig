@@ -1,0 +1,7 @@
+{% set escaped_package_name = header.on_package|replace({'/': '\/', '.': '\.', '-': '\-'}) %}
+{% if header.recommended_tag and package matches('/' ~ escaped_package_name ~ '/') %}
+    <div class="recommended-tag">
+
+        <span>{{ header.recommended_text.translatable|default('Best Value') }}</span>
+    </div>
+{% endif %}

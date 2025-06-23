@@ -1,0 +1,67 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set content = page.header.about_us_content %}
+{% set image = page.media[module.image] %}
+
+{% block render_block %}
+	<div class="about_us_wrapper slide-up">
+
+		<div class="container">
+
+            <div class="about_us_content">
+                
+                <div class="content">
+                    <h4 class="content_title">
+                        {{ module.content_title.translatable|striptags('<span>')|raw }}
+                    </h4>
+
+                    <div class="right_side">
+                        <p class="content_desc">{{ module.content_description.translatable }}</p>
+
+                        {% if module.content_buttons %}
+                            {% for button in module.content_buttons  %}
+                                <a class="button" href="{{ button.link }}">
+                                    {{ button.text.translatable }}
+
+                              
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+                    
+
+                </div>
+                
+                <div class="count_content">
+                    <div class="count_row">
+                        {% for item in content %}
+                            <div class="count">
+                                {% set icon = page.media[item.icon] %}
+                                {% if icon != '' %}
+                                    <img class="count_img" src="{{ icon.url }}" alt="Icon"/>
+                                {% endif %}
+
+                                <h4 class="count_number">
+                                    {{ item.count.translatable|raw }}
+                                </h4>
+                                <p class="count_details">
+                                    {{ item.brief.translatable|raw }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+
+                {# <div class="image">
+                    <img class="main-img" src="{{ image.url }}" alt="Mission Vission Image"/>
+                </div> #}
+            
+            </div>
+
+		</div>
+
+	</div>
+{% endblock %}

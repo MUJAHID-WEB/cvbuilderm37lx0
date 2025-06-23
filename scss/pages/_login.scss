@@ -1,0 +1,207 @@
+.forgot-section {
+  @include desktop-small {
+    // margin-top: $header-gap-mobile;
+  }
+}
+
+.login-section, .forgot-section {
+  // border-radius: 8px;
+  background: var(--color-white);
+  padding: 80px 0;
+
+  @include desktop-small {
+    padding: 60px 0;
+
+  }
+
+  &.forgot-section .whq-card-content #grav-login {
+    & > h1, & > p {
+      display: none;
+    }
+  }
+
+  @include whq-card-form(
+          $text-color: var(--color-text-light),
+          $title-bg: var(--color-tertiary),
+          $title-color: var(--color-text-light),
+          $card-shadow: none,
+          $border-radius: 8px,
+          $spacing: 0,
+          $title_typography: (size: display-lg, weight: regular),
+          $button_typography: (size: text-md, weight: bold),
+          $label_typography: (size: text-md, weight: semibold),
+          $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
+  );
+
+  // .whq-card-container{
+  //   gap: 60px !important;
+  // }
+
+  #grav-login {
+    .form-field{
+      &::before{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 10px;
+        display: block;
+        color: var(--color-text-light);
+
+        @include mobile{
+          // font-size: 16px;
+          // font-style: normal;
+          // font-weight: 400;
+          // line-height: 24px;
+          // color: var(--colo-text);
+        }
+      }
+    }
+    label {
+      color: var(--color-text-light);
+    }
+
+
+    .form-field:first-child {
+      &:before {
+        display: block;
+        // @include typography(text-md, semibold);
+      }
+    }
+
+    .form-field:nth-child(2) {
+      &:before {
+        display: block;
+        // @include typography(text-md, semibold);
+
+      }
+    }
+  }
+
+  .form-actions {
+    display: block;
+    flex-direction: column;
+    gap: 2rem;
+
+    .form-data.rememberme {
+      margin-top: 6px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+
+      @include mobile {
+        width: 100%;
+        display: block;
+
+      }
+
+      .form-input-wrapper {
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+          justify-content: center;
+        }
+
+        input[type="checkbox"] {
+          // width: auto;
+          appearance: none;
+          -webkit-appearance: none;
+          display: inline-block;
+          position: unset;
+
+          width: 16px;
+          height: 16px;
+          border-radius: 4px;
+          background-color: transparent;
+          border: 1px solid var(--color-text-light);
+
+
+          &:checked {
+            appearance: auto;
+          }
+
+        }
+
+        label {
+
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 30px;
+
+          color: var(--color-text);
+          margin-left: 8px;
+
+          // @include mobile{
+          //   font-size: 14px;
+          //   font-style: normal;
+          //   font-weight: 400;
+          //   line-height: 20px;
+          // }
+        }
+      }
+    }
+
+    .form-action-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 60px;
+
+
+      .secondary {
+        max-width: 300px;
+        align-self: end;
+        margin-top: -28px;
+        text-decoration: none;
+        padding: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        color: var(--color-text-light);
+        background-color: transparent;
+
+        @include mobile {
+          // margin-top: 1rem;
+          // font-size: 14px;
+          // font-style: normal;
+          // font-weight: 400;
+          // line-height: 20px;
+          margin-top: 10px;
+          align-self: center;
+        }
+
+        &.button {
+
+          &:after, &:before {
+            content: none;
+          }
+
+          &:hover {
+            box-shadow: none;
+            transform: translateY(0);
+            color: var(--color-primary) !important;
+          }
+        }
+      }
+
+      .primary {
+        width: 100% ;
+        padding: 12px 60px;
+        
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.forgot-section .whq-card .whq-card-container .whq-card-content form .form-actions button {
+  width: 100%;
+  margin-top: 30px;
+  @include desktop-small {
+    margin-top: 20px;
+  }
+}

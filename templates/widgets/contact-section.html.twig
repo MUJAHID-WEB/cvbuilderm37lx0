@@ -1,0 +1,32 @@
+{% set module = page.header.contents %}
+{% set right = page.header.modules %}
+
+<div class="contact-section">
+    <div class="container">
+        {# <div class="sub_title">{{ right.right_sub_title.translatable|striptags('<span>')|raw }}</div> #}
+        <h2>{{ right.right_title.translatable|striptags('<span>')|raw }}</h2>
+
+        <div class="all-info">
+            {% for contact in module %}
+                <div class="contact">
+
+                    
+                    
+                    <img src="{{ url('theme://images/contact-section/c'~ loop.index ~'.svg') }}" />
+
+                    <div class="content">
+                        <h5>{{ contact.title.translatable }}</h5>
+                        {% if loop.index == 1 %}
+                            <p>{{ webdata('company.address') }}, {{ webdata('company.city') }}, {{ webdata('company.postcode') }}, {{ webdata('company.country') }}</p>
+                        {% elseif loop.index == 2 %}
+                            <p>{{ webdata('support_phone') }}</p>
+                        {% else %}
+                            <p>{{ webdata('support_email') }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>

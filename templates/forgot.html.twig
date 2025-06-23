@@ -1,0 +1,43 @@
+{% set body_classes = "page-forgot"%}
+{% extends 'partials/base.html.twig' %}
+
+{% set homepage = grav.pages.find('/') %}
+{% set forgot_content = homepage.header.forgot %}
+{% block article %}
+
+  {# {% include 'partials/no-hero-header.html.twig' with {
+    'title': page.header.title,
+    'links': [
+      {
+        'url': '/' ~ grav.language.getActive,
+        'title': "METRICALO.HOME"|t
+      },
+      {
+        'title': page.header.title|t
+
+      }
+    ]
+  } %} #}
+
+  <div class="forgot-section">
+    <div class="container ">
+      {% embed "widgets/whq-card.html.twig" %}
+        {% block card_title %}
+          {{ "METRICALO.PAGE_FORGOT_PASSWORD"|t }}
+        {% endblock %}
+
+        {% block card_image %}
+          <img src="{{ url('theme://images/forgot.webp') }}" alt="Responsive Image">
+        {% endblock %}
+
+        {% block card_content %}
+          <h3>{{ forgot_content.top_title.translatable | raw }}</h3>
+          <p>{{ forgot_content.top_sub_title.translatable | raw }}</p>
+          {% include 'partials/notifications.html.twig' %}
+          {% include 'partials/messages.html.twig' %}
+          {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+{% endblock %}

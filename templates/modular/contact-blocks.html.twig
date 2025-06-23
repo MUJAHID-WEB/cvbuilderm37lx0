@@ -1,0 +1,94 @@
+{% extends 'partials/variables.html.twig' %}
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+{% set image_left = page.media[module.image] %}
+{# {% set image_bottom_left = page.media[module.image_bottom_left] %} #}
+
+{% set right_title = page.find('/home').header.modules %}
+
+
+
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+
+    {# {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+
+            }
+        ]
+    } %} #}
+    
+    <section class="contact-block-section {{ module.classes }}">
+        
+        {# <div class="container">
+
+            <div class="contact-info-wrapper">
+
+                {% for item in contents %}
+                    <div class="contact-info-item">
+                        <div class="contact-info-top">
+                            <img src="{{ page.media[item.icon].url }}" />
+                            <h3>{{ item.title.translatable }}</h3>
+                        </div>
+
+                        <a href="#">{{ item.description.translatable }}</a>
+
+                    </div>
+                    <!-- End item -->
+                {% endfor %}
+            
+            </div>
+        
+        </div> #}
+
+        <div class="container">
+            <div class="contact-block-wrapper">
+                <div class="contact-left">
+                    {# <h3>{{ module.sub_title.translatable|striptags('<span>')|raw }}</h3> #}
+
+                    <h2>{{ right_title.title.translatable|striptags('<span>')|raw }}</h2>
+                    {# <img src="{{ url('theme://images/form-image.png') }}"/> #}
+                    {% include 'widgets/contact-section.html.twig' %}
+                    {# <div class="paragraph-image">
+                        <img class="" src="{{ image_left.url }}" alt="icon"/>
+                    </div> #}
+                </div>
+                <div class="contact-block-content-parent">
+                    <div class="contact-content">
+                        {# <div class="icon-sub-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <g clip-path="url(#clip0_54_1998)">
+                                <path d="M14.6078 12.2616C14.6078 12.2331 14.6001 12.2052 14.5856 12.1807C14.571 12.1562 14.5502 12.1361 14.5252 12.1224L10.1412 9.72481L7.74355 5.34049C7.68763 5.23873 7.52035 5.23873 7.46491 5.34049L5.06731 9.72457L0.683232 12.1222C0.658207 12.1359 0.637334 12.1561 0.622795 12.1807C0.608256 12.2053 0.600586 12.2333 0.600586 12.2619C0.600586 12.2904 0.608256 12.3184 0.622795 12.343C0.637334 12.3676 0.658207 12.3878 0.683232 12.4015L5.06731 14.7999L7.46491 19.1839C7.49275 19.2348 7.54651 19.2667 7.60411 19.2667C7.66171 19.2667 7.71547 19.2351 7.74331 19.1839L10.1409 14.7999L14.5252 12.4015C14.5503 12.3878 14.5712 12.3675 14.5857 12.3429C14.6003 12.3183 14.6079 12.2902 14.6078 12.2616ZM12.3669 4.76281L14.6452 6.00841L15.8901 8.28649C15.8996 8.30392 15.9137 8.31846 15.9308 8.32859C15.9478 8.33872 15.9673 8.34406 15.9872 8.34406C16.0071 8.34406 16.0265 8.33872 16.0436 8.32859C16.0607 8.31846 16.0747 8.30392 16.0843 8.28649L17.3308 6.00865L19.6082 4.76281C19.6254 4.75327 19.6398 4.73927 19.6498 4.72228C19.6599 4.7053 19.6651 4.68593 19.6651 4.66621C19.6651 4.64649 19.6599 4.62713 19.6498 4.61014C19.6398 4.59316 19.6254 4.57916 19.6082 4.56961L17.3306 3.32401L16.0843 1.04641C16.0454 0.974894 15.929 0.975854 15.8906 1.04641L14.6457 3.32401L12.3674 4.56961C12.3501 4.57912 12.3357 4.59308 12.3256 4.61004C12.3156 4.627 12.3102 4.64635 12.3102 4.66607C12.3101 4.68579 12.3154 4.70517 12.3254 4.72218C12.3353 4.73919 12.3497 4.75322 12.3669 4.76281ZM23.3318 17.8599L20.1996 16.147L18.4872 13.014C18.4757 12.9932 18.4589 12.9758 18.4385 12.9637C18.4181 12.9516 18.3947 12.9452 18.371 12.9452C18.3472 12.9452 18.3239 12.9516 18.3035 12.9637C18.2831 12.9758 18.2663 12.9932 18.2548 13.014L16.5415 16.1472L13.4083 17.8601C13.3874 17.8715 13.3701 17.8883 13.358 17.9088C13.3459 17.9292 13.3395 17.9525 13.3395 17.9763C13.3395 18 13.3459 18.0233 13.358 18.0438C13.3701 18.0642 13.3874 18.081 13.4083 18.0924L16.5415 19.8063L18.2551 22.9383C18.2665 22.959 18.2833 22.9763 18.3037 22.9884C18.3241 23.0005 18.3474 23.0068 18.3711 23.0068C18.3948 23.0068 18.4181 23.0005 18.4385 22.9884C18.4589 22.9763 18.4757 22.959 18.4872 22.9383L20.1996 19.8063L23.3316 18.0924C23.3524 18.081 23.3697 18.0642 23.3818 18.0438C23.3939 18.0233 23.4003 18 23.4003 17.9763C23.4003 17.9525 23.3939 17.9292 23.3818 17.9088C23.3697 17.8883 23.3524 17.8715 23.3316 17.8601L23.3318 17.8599Z" fill="#15301F"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_54_1998">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            <p class='icon-sub-title'>{{ module.icon_sub_title.translatable|striptags('<span>')|raw }}</p>
+                        </div> #}
+                        <h1>{{ module.title.translatable|striptags('<span>')|raw }}</h1>
+                        <p>{{ module.sub_title.translatable|striptags('<span>')|raw }}</p>
+                    </div>
+                    <div class="contact-form">
+                        {% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+{% endblock %}

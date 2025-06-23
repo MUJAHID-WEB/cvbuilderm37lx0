@@ -1,0 +1,26 @@
+<div class="footer-menu">
+    
+    <div class="frame-24">
+        {% for link in landingLinks %}
+            {% if loop.index == 3 %}
+                <div class="menu-item">
+                    <a rel="noopener noreferrer" class="" href="{{ grav.language.getActive }}/#modular_pricing">
+                        {{ homepage_content.pricing.translatable }}
+                    </a>
+                </div>
+            {% endif %}
+
+            {% set link_page = pages.find(link) %}
+            {% if link_page %}
+                <div class="menu-item">
+                     {# {% if link_page and not (link_page.url == '/' ~ link_page.language ~ '/privacy-policy' or link_page.url == '/' ~ link_page.language ~ '/cookie-policy') %} #}
+                        
+                        <a rel="noopener noreferrer" href="{{ link_page.url|replace({'%23': '#'}) }}">{{ link_page.menu }}</a>
+                        
+                    {# {% endif %} #}
+                    
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

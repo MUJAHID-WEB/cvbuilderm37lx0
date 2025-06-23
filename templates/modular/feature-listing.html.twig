@@ -1,0 +1,67 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.contents %}
+{% set content_lists = page.header.feature_blocks %}
+{% set content_balance = page.header.balance %}
+
+{% block render_block %}
+    <div class="features-listing-section about-listing-animation ">
+        <div class="container">
+
+            <div class="features-listing-wrapper ">
+
+                <div class="contents-wrapper">
+
+                    <div class="content">
+                        {% if contents.title %}
+                            <h3 class="title section-title-left">{{ contents.title.translatable|striptags('<span>')|raw }}</h3>
+                        {% endif %}
+
+                        <div class="descriptions">
+                            {{ page.content|raw }}
+                        </div>
+                    </div>
+
+                    <div class="content-list">
+
+                        {% for item in content_lists %}
+                            <div class="item">
+                                <h2>{{ item.title.translatable }}</h2>
+                                <p>{{ item.text.translatable }}</p>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    
+                </div>
+
+                <div class="image-area">
+
+                    <div class="image-box">
+
+                        <img class="main-image" src="{{ page.media[contents.image].url }}" alt="main image"/>
+
+                        <div class="img-overlay">
+
+                            <img src="{{ url('theme://images/doller.png') }}"/>
+                            <p>{{ content_balance.subtitle.translatable }}</p>
+                            <h3>{{ content_balance.title.translatable }}</h3>
+
+                            <img class="balance-shape" src="{{ url('theme://images/balance-shape.png') }}" />
+
+                            <div class="percent">
+                                <span>{{ content_balance.percent_left.translatable }}%</span>
+                                <span>{{ content_balance.percent_right.translatable }}%</span>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    {% endblock %}

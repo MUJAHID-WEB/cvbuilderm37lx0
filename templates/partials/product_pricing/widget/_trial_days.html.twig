@@ -1,0 +1,3 @@
+{% if product.pricing_plan.subscription_trial_days %}
+    <div class="price trial-days">{{ product.pricing_plan.subscription_trial_days }}-{{ "METRICALO.TRIAL_DAYS"|t }}</div>
+{% endif %}

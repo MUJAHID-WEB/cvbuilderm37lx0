@@ -1,0 +1,73 @@
+title: Hero
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            hero_section:
+              type: section
+              title: Hero Section
+              underline: true
+              fields:
+                header.hero.subtitle.translatable:
+                  type: text
+                  label: Hero Subtitle
+                  classes: 'translatable'
+                header.hero.title.translatable:
+                  type: text
+                  label: Hero Title
+                  classes: 'translatable'
+                header.hero.text.translatable:
+                  type: textarea
+                  label: Hero Text
+                  classes: 'translatable'
+                header.hero.image:
+                    type: pagemediaselect
+                    label: Hero image
+                    preview_images: true
+
+                header.hero.buttons:
+                  type: list
+                  label: Hero Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+                    .btn_class:
+                      type: text
+                      label: Button Class
+
+
+                header.hero_blocks_section:
+                  type: section
+                  title: Hero Block 
+                  underline: false
+                  label: false
+                  fields:
+                    header.hero_blocks:
+                      type: list
+                      fields:
+                        .title.translatable:
+                          type: text
+                          label: Title
+                          classes: 'translatable'
+                        .description.translatable:
+                          type: textarea
+                          label: Description
+                          classes: 'translatable'
+                        .image:
+                          type: pagemediaselect
+                          label: Image

@@ -1,0 +1,192 @@
+.text-right {
+  align-self: stretch;
+  padding: $content-padding 0;
+  background: var(--bg-body);
+  background-image: url(../../images/about-text-right-bg.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  @include desktop-small {
+    padding: $content-padding-sm 0 !important;
+
+    background-image: none;
+  }
+
+  .text-right-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2.5rem;
+
+    @include desktop-small {
+      flex-direction: column-reverse;
+    }
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 50%;
+
+      .left-top {
+        display: flex;
+        gap: 1rem;
+
+        @include desktop-small {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        img {
+          width: 40%;
+
+          @include desktop-small {
+            width: 100%;
+          }
+        }        
+
+        .left {
+          padding: 30px;
+          border-radius: 24px;
+          background: var(--color-primary);
+          border: 1px solid var(--color-tertiary);
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          width: 60%;
+
+          @include desktop-small {
+            width: 100%;
+          }
+
+          h4 {
+            color: var(--color-white);
+            @include typography(display-xs, semibold);
+            // font-family: var(--secondary-font);
+
+            @include desktop-small {
+              @include typography(display-xs, medium);
+            }
+          }
+
+          .text-right-btn {
+            text-decoration: none;
+            background: #fff;
+            color: var(--color-black);
+            padding: 12px 40px;
+            border-radius: 12px;
+            text-align: center;
+          }
+        }
+
+      }
+    }
+
+
+    .text-right-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 22px;
+      flex: 50%;
+
+      @include desktop-small {
+        padding: 0px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .sub-title {
+        position: relative;
+        h4 {
+          margin-left: 38px;
+          @include typography(display-lg, semibold);
+          color: var(--color-text-dark);
+   
+        }
+      }
+
+      .block-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+        align-self: stretch;
+        @include desktop-small {
+          align-items: center;
+        }
+        
+        h3 {
+          color: var(--color-primary);
+          // font-family: var(--secondary-font);
+          @include typography(display-lg, semibold);
+          @include desktop-small {
+            @include typography(display-md, semibold);
+            text-align: center;
+          }
+
+          span{
+            color: unset;
+          }
+        }
+      }
+
+      p, li {
+        @include typography(text-lg, regular);
+        color: var(--color-text-light);
+
+        @include desktop-small {
+          @include typography(text-md, regular);
+          text-align: center;
+        }
+      }
+
+      .button {
+        background: var(--color-primary);
+        color: var(--color-white);
+      }
+
+    }
+
+    .right-buttom {
+      display: flex;
+      gap: 1rem;
+      margin-top: 18px;
+      
+
+      @include desktop-small {
+        gap: 40px;
+        flex-direction: column;
+      }
+
+      .left-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 293px;
+        @include desktop-small {
+          align-items: center;
+          max-width: 100%;
+        }
+
+
+        h4 {
+          @include typography(text-xl, medium);
+          color: var(--color-primary);
+          // font-family: var(--secondary-font);
+        }
+
+        p, li {
+          @include typography(text-md, regular);
+          color: var(--color-text-light);
+  
+          @include desktop-small {
+            @include typography(text-sm, regular);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

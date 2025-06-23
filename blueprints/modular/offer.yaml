@@ -1,0 +1,48 @@
+title: Offer
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            offer_section:
+              type: section
+              title: Offer Section
+              underline: true
+              fields:
+                header.offer.offer_img_left:
+                  type: pagemediaselect
+                  label: Offer image left
+                header.offer.h1.translatable:
+                  type: text
+                  label: H1 Offer Header
+                  classes: 'translatable'
+                header.offer.text.translatable:
+                  type: textarea
+                  label: Offer Text
+                  classes: 'translatable'
+                header.offer.offer_img_left_top:
+                  type: pagemediaselect
+                  label: Offer image left top
+                header.offer.offer_img_right_bottom:
+                  type: pagemediaselect
+                  label: Offer image right bottom
+                header.offer.buttons:
+                  type: list
+                  label: offer Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link

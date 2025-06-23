@@ -1,0 +1,126 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{# {% set image_left = page.media[module.image] %} #}
+
+{% block render_block %}
+    <div class="faqs">
+        <div class="container">
+            <div class="top-content">
+              
+                {% if module.title %}
+                    <h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                {% endif %}
+              
+                {#  {% if module.sub_title %}
+                        <p class="sub-title">{{ module.sub_title.translatable }}</p>
+                    {% endif %} #}
+            </div>
+
+            <div class="bottom-content">
+                <div class="faqs-container">
+                    <div class="faqs-items">
+                        {% for key, faq_item in page.header.faq_blocks %}
+                            {% if faq_item.description != '' and faq_item.title != '' %}
+                                <div class="faq-accordion-item" id="item-{{ loop.index }}">
+                                    <div class="faq-accordion-header" data-target="#faq-accordion-item-{{ loop.index }}">
+                                        <button type="button" class="faq-accordion-btn">
+                                            {{ faq_item.title.translatable }}
+                                            
+                                        </button>
+                                        <img src="{{ url('theme://images/faq_arrow_up.svg') }}" alt=""
+                                            class="faq-accordion-up-btn d-none">
+                                        <img src="{{ url('theme://images/faq_arrow_down.svg') }}" alt=""
+                                            class="faq-accordion-down-btn">
+                                    </div>
+                                    <div class="faq-accordion-body d-none" id="faq-accordion-item-{{ loop.index }}">
+                                        <p>{{ faq_item.description.translatable|striptags('<br>')|raw }}</p>
+                                            {# module.title.translatable|striptags('<span>')|raw #}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+
+
+        
+
+
+        </div>
+    </div>
+
+
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Keep the first FAQ item open initially
+    const firstItem = document.querySelector(".faq-accordion-item");
+    if (firstItem) {
+        const firstBody = firstItem.querySelector(".faq-accordion-body");
+        const firstUpIcon = firstItem.querySelector(".faq-accordion-up-btn");
+        const firstDownIcon = firstItem.querySelector(".faq-accordion-down-btn");
+        const firstButton = firstItem.querySelector(".faq-accordion-btn");
+
+        firstBody.classList.remove("d-none");
+        firstBody.style.height = "100%";
+        firstUpIcon.classList.remove("d-none");
+        firstDownIcon.classList.add("d-none");
+        firstButton.classList.add("opened");
+    }
+
+    // FAQ accordion toggle logic
+    const accordionButtons = document.querySelectorAll(".faq-accordion-header");
+
+    accordionButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const targetId = button.getAttribute("data-target");
+            const body = document.querySelector(targetId);
+            const parentItem = button.closest(".faq-accordion-item");
+            const upIcon = parentItem.querySelector(".faq-accordion-up-btn");
+            const downIcon = parentItem.querySelector(".faq-accordion-down-btn");
+            const openHeader = parentItem.querySelector(".faq-accordion-btn");
+
+            const isOpen = !body.classList.contains("d-none");
+
+            // Close all other items first
+            document.querySelectorAll(".faq-accordion-item").forEach(item => {
+                const otherBody = item.querySelector(".faq-accordion-body");
+                const otherUpIcon = item.querySelector(".faq-accordion-up-btn");
+                const otherDownIcon = item.querySelector(".faq-accordion-down-btn");
+                const otherBtn = item.querySelector(".faq-accordion-btn");
+
+                if (otherBody !== body) {
+                    otherBody.classList.add("d-none");
+                    otherBody.style.height = "0px";
+                    otherUpIcon.classList.add("d-none");
+                    otherDownIcon.classList.remove("d-none");
+                    otherBtn.classList.remove("opened");
+                }
+            });
+
+            // Toggle clicked item
+            if (isOpen) {
+                body.style.height = "0px";
+                setTimeout(() => {
+                    body.classList.add("d-none");
+                }, 15);
+
+                upIcon.classList.add("d-none");
+                downIcon.classList.remove("d-none");
+                openHeader.classList.remove("opened");
+            } else {
+                body.classList.remove("d-none");
+                body.style.height = "100%";
+
+                upIcon.classList.remove("d-none");
+                downIcon.classList.add("d-none");
+                openHeader.classList.add("opened");
+            }
+        });
+    });
+});
+
+</script>
+{% endblock %}

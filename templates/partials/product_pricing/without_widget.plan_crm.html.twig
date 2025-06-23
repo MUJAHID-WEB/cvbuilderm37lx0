@@ -1,0 +1,70 @@
+<div class="pricing">
+    <div class="pricing-content">
+    {% set escaped_package_name = header.on_package|replace({'/': '\/', '.': '\.', '-': '\-'}) %}
+   {% if header.recommended_tag and package matches('/' ~ escaped_package_name ~ '/') %}
+      <div class="recommended-tag">
+         <span>{{ header.recommended_text.translatable|default('Best Value') }}</span>
+      </div>
+   {% endif %}
+       <div class="price">
+          <div class="type">
+             <div class="type-wrap">{{ package|striptags('<br>')|raw }}</div>
+          </div>
+          {# <p class="description">{{ "METRICALO.DESCRIPTION"|t }}</p> #}
+          {% set product = product %}
+          <div class="pricing-group" style="gap:1rem">
+                <div class="pricing-wrap">
+                  <div class="price trial text-primary-color">{{ product.pricing_plan.subscription_price|number_format(2, '.', ',') }}
+                      {{ product.pricing_plan.currency }}</div>
+                    {% if product.pricing_plan.subscription_trial_days %}
+                    {# <div class="price trial text-primary-color">
+                      {{ product.pricing_plan.price }} {{product.pricing_plan.currency }}
+                   </div> #}
+                      <div class="price trial-days">{{ product.pricing_plan.subscription_trial_days }}-{{ "METRICALO.TRIAL_DAYS"|t }}</div>
+                   {% endif %}
+                    
+                </div>
+             <div class="billed-section">
+                   {# <div class="text-sm renew-price">{{ product.pricing_plan.subscription_price|number_format(2, '.', ',') }}
+                      {{ product.pricing_plan.currency }}</div> #}
+                                 <div class="price trial text-primary-color">
+                      {{ product.pricing_plan.price }} {{product.pricing_plan.currency }}
+                   </div>
+                    <div class="text-sm billed-days">{{ 'METRICALO.BILLED_EVERY'|t }}
+                   {{ product.pricing_plan.subscription_interval_days }}
+                   {% if product.pricing_plan.subscription_interval_days == 1 %}
+                      {{ 'METRICALO.DAY'|t }}
+                   {% else %}
+                      {{ 'METRICALO.DAYS'|t }}
+                   {% endif %}
+                    </div>
+             </div>
+          </div>
+          <!-- {% if product.pricing_plan.subscription_trial_days %}
+                <p>{{ product.pricing_plan.subscription_trial_days }}
+                    {{ "METRICALO.TRIAL_DAYS"|t }} / {{ product.pricing_plan.price }} {{ product.pricing_plan.currency }}</p>
+            {% endif %} -->
+       </div>
+       {# <script>
+          // Embed the benefits data as a JSON object
+          const benefits = {{ product.all_benefits| json_encode | raw }};
+          console.log('All Benefits:', benefits);
+       </script> #}
+       <script>
+          // Embed the benefits data as a JSON object
+          var output = {{ product| json_encode | raw }};
+          console.log('Product', output);
+       </script>
+       <div class="benefits">
+          {% for benefit in product.all_benefits %}
+             <div class="benefit">
+                <img class="check" src="{{ url('theme://images/check.svg') }}" />
+                <div class="streamline">{{ benefit|markdown(false) }}</div>
+             </div>
+          {% endfor %}
+       </div>
+    </div>
+    <div>
+       <a class="pricing-btn button" href="{{ url(product.purchase_url) }}">{{ "METRICALO.SIGNUP"|t }}</a>
+    </div>
+</div>

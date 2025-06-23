@@ -1,0 +1,24 @@
+<div class="footer-bottom">
+    <div class="container">
+        <p>{{ "METRICALO.COPYRIGHT"|t|raw }} &copy; {{ data.name }} {{ "now"|date('Y') }},  {{ data.company.name }} - {{data.company.country_code}} {{ data.company.business_number }} - {{ data.company.address }}, {{ data.company.city }}, {{ data.company.postcode }}, {{ data.company.country }} | {{ "METRICALO.RIGHTS_RESERVED"|t }}.</p>
+{#      
+        <div class="policy-pages-link-area">
+            {% set policy_links = config.site.footer.links %}
+
+            {% for link in policy_links %}
+
+                {% set link_page = pages.find(link) %}
+
+                {% if link_page %}
+                    {% if link_page and link_page.menu and (link_page.url == '/' ~ link_page.language ~ '/privacy-policy' or link_page.url == '/' ~ link_page.language ~ '/cookie-policy') %}
+                        
+                        <a rel="noopener noreferrer " class="link copyright-link" href="{{ link_page.url }}">{{ link_page.menu }}</a>
+                        
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div> #}
+
+    </div>
+
+</div>

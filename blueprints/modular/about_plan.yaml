@@ -1,0 +1,66 @@
+title: About Plan
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            hero_section:
+              type: section
+              title: Hero Section
+              underline: true
+              fields:
+                header.hero.classes:
+                  label: Hero Style
+                  type: selectize
+                  selectize:
+                    options:
+                      - text: "Text left image right"
+                        value: "text_left__image_right"
+                      - text: "Text right image left"
+                        value: "text_right__image_left"
+                      - text: "Text image in center"
+                        value: "text_image_center"
+
+                header.hero.h1.translatable:
+                  type: text
+                  label: H1 Hero Header
+                  classes: 'translatable'
+                header.hero.text.translatable:
+                  type: textarea
+                  label: Hero Text
+                  classes: 'translatable'
+                header.hero.image:
+                    type: pagemediaselect
+                    label: Hero image
+                header.hero.left_image:
+                    type: pagemediaselect
+                    label: Hero left image
+                header.hero.hero_bg:
+                  type: pagemediaselect
+                  label: Hero background image
+                header.hero.size:
+                  type: select
+                  label: Hero size
+                  options:
+                    large: Large
+                    medium: Medium
+                header.hero.buttons:
+                  type: list
+                  label: Hero Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link

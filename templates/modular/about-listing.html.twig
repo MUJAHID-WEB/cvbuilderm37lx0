@@ -1,0 +1,124 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set image_left = page.media[page.header.contents.image_left] %}
+{% set image_right = page.media[page.header.contents.image_right] %}
+{% set image_large = page.media[page.header.contents.image_large] %}
+
+{% set list_title_icon = page.media[page.header.contents.list_title_icon] %}
+
+{% block render_block %}
+    <div class="about-listing-wrapper about-listing-animation {{ module.parent_classes }}">
+        <div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="listing-contents">
+                    <div class="header-content">
+                        
+                        <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                        {% if module.subtitle %}
+                            <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                        {% endif %}
+                    </div>
+                    {# <div class="listing_header">
+                        <h5>{{ module.list_title.translatable|striptags('<span>')|raw }}</h5>
+
+                        {% if list_title_icon %}
+                            <img class="icon" src="{{ list_title_icon.url }}"/>
+                        {% endif %}
+                    </div> #}
+                    
+                    <div class="listing-content-container">
+                     
+                        {% for section in page.header.about_sections %}
+                            {% if section.description != '' and section.title != '' %}
+                                <div class="listing listing-horizontal {{ module.classes|replace({',' : ' '}) }}">
+                                    <div class="listing-icon">
+                                        {% set icon = page.media[section.icon] %}
+                                        {% if icon %}
+                                            <img class="icon" src="{{ icon.url }}"/>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="listing-content">
+                                        <p>
+                                            <b>{{ section.title.translatable }}</b> {{ section.description.translatable }}
+                                        </p>
+                                        {# <h5 class="listing-title">
+                                            {{ section.title.translatable }}
+                                            <p>{{ section.description.translatable }}</p>
+                                        </h5> #}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {# {% if page.content != '' %}
+                            <div class="contents">
+                                <p>{{ page.content|raw }}</p>
+                            </div>
+                        {% endif %} #}
+                    </div>
+
+                    {% if module.buttons %}
+                        {% for button in module.buttons  %}
+                            <a class="listing_btn" href="{{ button.link }}">
+                             
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="#0A5CD7"/>
+                                <circle cx="30" cy="30" r="29.5" stroke="#15301F" stroke-opacity="0.14"/>
+                                <g clip-path="url(#clip0_728_7733)">
+                                <path d="M42.5928 34.6916C40.7561 34.6916 38.9527 34.4043 37.2437 33.8395C36.4062 33.5539 35.3768 33.8159 34.8657 34.3409L31.4925 36.8873C27.5805 34.7991 25.1709 32.3902 23.1112 28.5076L25.5827 25.2223C26.2248 24.581 26.4551 23.6443 26.1791 22.7654C25.612 21.0474 25.3238 19.2448 25.3238 17.4073C25.3239 16.0799 24.244 15 22.9166 15H17.4073C16.0799 15 15 16.0799 15 17.4073C15 32.6221 27.378 45 42.5928 45C43.9202 45 45.0001 43.9201 45.0001 42.5927V37.0988C45 35.7715 43.9201 34.6916 42.5928 34.6916Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_728_7733">
+                                <rect width="30" height="30" fill="white" transform="translate(15 15)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                                <div class='btn_text'>
+                                    <p>
+                                        {{ button.text.translatable }}
+                                    </P>
+                                    <h5>
+                                        {{ webdata('support_phone') }}
+                                    </h5>
+                                </div>
+                        
+                            </a>
+                           
+                        {% endfor %}
+                    {% endif %}
+                    
+                </div>
+
+                <div class="image-container">
+                    <div class="single_img">
+                        {% if image_large %}
+                            <img src="{{ image_large.url }}" alt="single Image"/>
+                        {% endif %}
+
+                        <div class="single_img_content">
+                            <h4>{{ module.img_title.translatable|striptags('<span>')|raw }}</h4>
+                            <p>{{ module.img_description.translatable}}</p>
+                        </div>
+                    </div>
+
+                    <div class="double_img">
+                        {% if image_left %}
+                            <img class="image_left" src="{{ image_left.url }}" alt="left Image"/>
+                        {% endif %}
+
+                        {% if image_right %}
+                            <img class="image_right" src="{{ image_right.url }}" alt="right Image"/>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>{% endblock %}

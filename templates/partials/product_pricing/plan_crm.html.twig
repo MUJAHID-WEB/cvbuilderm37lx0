@@ -1,0 +1,38 @@
+<div class="pricing" data="{{ packageKey }}">
+	<div class="pricing-content">
+		<div class="recommended-tag-parent">
+			{% if header.on_package == package %}
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="18" viewbox="0 0 50 18" fill="none">
+					<path d="M25 0L49.2487 17.8393H0.751289L25 0Z" fill="#255728"/>
+				</svg>
+			{% endif %}
+			{% include 'partials/product_pricing/widget/_recommended_tag.html.twig' %}
+		</div>
+		<div class="package-top-section">
+			<div class="price">
+
+				{% include 'partials/product_pricing/widget/_pricing_section.html.twig' %}
+			</div>
+
+		</div>
+
+		<div class="package-bottom-section">
+				<div class="package-title">
+					{% include 'partials/product_pricing/widget/_package_title.html.twig' %}
+				</div>
+				{% include 'partials/product_pricing/widget/_benefits.html.twig' with { iterationCount: iterationCount } %}
+	
+
+			{% include 'partials/product_pricing/widget/_signup_btn.html.twig' %}
+		</div>
+
+	</div>
+
+
+</div>
+{#       <script>
+   // Embed the product data as a JSON object
+   var output = {{ product| json_encode | raw }};
+   console.log('Product', output);
+</script>
+#}

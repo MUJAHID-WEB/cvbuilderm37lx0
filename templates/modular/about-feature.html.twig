@@ -1,0 +1,96 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+    <div class="about_features">
+        {# <div class="container">
+			<div class="about_features_header">
+				{% if module.title %}
+					<h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+				{% endif %}
+
+                <div class="description">
+                    {% if page.content %}
+                        <div class="about_features_description">
+                            {{ page.content|raw }}
+                        </div>
+                    {% endif %}
+                </div>
+
+				
+			</div>
+        </div> #}
+
+        <div class="about_features_container container">
+
+			<div class="about_features_left">
+				  {% for about_features in page.header.about_features|slice(0,2) %}
+
+					<div class="about_features_card">
+						{% set img_out = page.media[about_features.image_outside] %}
+						{% if img_out != '' %}
+							<div class="img_out">
+								<img class="" src="{{ img_out.url }}"/>
+							</div>
+						{% endif %}
+
+						<div class="about_features_contents">
+							{% set img_in = page.media[about_features.image_inside] %}
+							{% if img_in != '' %}
+								<div class="img_in">
+									<img class="" src="{{ img_in.url }}"/>
+								</div>
+							{% endif %}
+							<div class="about_features_content">
+								{% set icon = page.media[about_features.icon] %}
+								<div class="icon_head">
+									{# <img class="icon" src="{{ icon.url }}"/> #}
+									<h4 class="head">{{ about_features.title.translatable }}</h4>
+								</div>
+								
+								<p class="desc">{{ about_features.description.translatable }}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+
+			<div class="about_features_right">
+				  {% for about_features in page.header.about_features|slice(2,1) %}
+
+					<div class="about_features_card">
+						{% set img_out = page.media[about_features.image_outside] %}
+						{% if img_out != '' %}
+							<div class="img_out">
+								<img class="" src="{{ img_out.url }}"/>
+							</div>
+						{% endif %}
+
+						<div class="about_features_contents">
+							{% set img_in = page.media[about_features.image_inside] %}
+							{% if img_in != '' %}
+								<div class="img_in">
+									<img class="" src="{{ img_in.url }}"/>
+								</div>
+							{% endif %}
+							<div class="about_features_content">
+								{% set icon = page.media[about_features.icon] %}
+								<div class="icon_head">
+									{# <img class="icon" src="{{ icon.url }}"/> #}
+									<h4 class="head">{{ about_features.title.translatable }}</h4>
+								</div>
+								
+								<p class="desc">{{ about_features.description.translatable }}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+
+          
+        </div>
+    </div>
+{% endblock %}
