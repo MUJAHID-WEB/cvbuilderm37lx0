@@ -65,6 +65,7 @@
 
 {# Render products in the defined serial order #}
 {% set iterationCount = 1 %}
+{# {{dd(iterationCount)}} #}
 
 {% for package_key, package in packages %}
     {% if grouped_products[package.key] is defined %}

@@ -1,0 +1,52 @@
+title: Swiper Suffle
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            offer_section:
+              type: section
+              title: Offer Section
+              underline: true
+              fields:
+              
+                header.contents.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+
+                header.contents.brief.translatable:
+                  type: textarea
+                  label: Brief
+                  classes: 'translatable'
+
+                header.contents.btn_text.translatable:
+                  type: text
+                  label: BTN Text
+                  classes: 'translatable'
+                
+
+                header.contents.images:
+                  type: list
+                  label: Swiper Slide
+                  fields:
+                    .title.translatable:
+                      type: text
+                      label: Title
+
+                    .brief.translatable:
+                      type: textarea
+                      label: Brief 
+
+                    .img:
+                      type: pagemediaselect
+                      label: Image
+                      prevew_images: true

@@ -4,7 +4,7 @@ streams:
      type: ReadOnlyStream
      prefixes:
        '':
-         - 'environment://themes/budgeting20s0'
+         - 'environment://themes/cvbuilderm37lx0'
          - 'user://themes/base-theme'
 
 enabled: true

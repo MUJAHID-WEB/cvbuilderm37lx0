@@ -1,0 +1,94 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<div class="swiper-suffle-section {{ module.offer_parent_class }}">
+	<div class="container">
+
+		<div class="swiper-suffle-wrapper">
+
+			<div class="offer-wrapper">
+
+				<div class="offer-content"> 
+					<h1 class="offer-title section-title">
+						{{ contents.title.translatable|striptags('<span>')|raw }}
+					</h1>
+					<p class="brief">{{ contents.brief.translatable }}</p>
+
+					<div class="actions">
+						<a class="swiper-btn" href="{{ grav.language.active }}/about">{{ contents.btn_text.translatable }}</a>
+					</div>
+				</div>
+
+				<div class="offer-image" >
+
+					<div class="swiper-card swiper">
+						<div class="swiper-wrapper">
+							{% for item in contents.images %}
+							<div class="swiper-slide">
+								<img class="slider-img" width="100%" src="{{ page.media[item.img].url }}" alt="Swiper Image"/>
+								<div class="swiper-overlay">
+								<h4 class="title">{{ item.title.translatable }}</h4>
+								<p class="brief">{{ item.brief.translatable }}</p>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+
+						<div class="navigations-custom-suffle">
+							<div class="swiper-button-next">
+							<img src="{{ url('theme://images/arrow-right.svg') }}" />
+							</div>
+							<div class="swiper-button-prev">
+							<img src="{{ url('theme://images/arrow-left.svg') }}" />
+							</div>
+						</div>
+					</div>
+
+				
+				</div>
+
+				
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+  <script>
+
+
+
+	var swiper = new Swiper(".swiper-card", {
+		effect: "cards",
+		grabCursor: true,
+		loop: true,
+		centeredSlides: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		  cardsEffect: {
+			perSlideOffset: 8,
+			perSlideRotate: 2,
+			slideShadows: true,
+		},
+
+		breakpoints: {
+			320: { slidesPerView: 1 },
+			480: { slidesPerView: 1 },
+			768: { slidesPerView: 2 },
+			992: { slidesPerView: 3 },
+		},
+
+	});
+
+
+  	</script>
+{% endblock %}

@@ -8,13 +8,13 @@
 
 
 .header {
-  // position: fixed; 
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
   padding: 16px 0;
   z-index: 10;
-  background: var(--color-white);
+  // background: var(--color-white);
 
   @include desktop-small {
     // position: fixed;
@@ -45,9 +45,9 @@
       justify-content: space-between;
       align-items: center;
       display: flex;
-      padding: 18px 32px;
+      // padding: 18px 32px;
       border-radius: 24px;
-      background: var(--color-tertiary);
+      // background: var(--color-tertiary);
       // gap: 70px;
       width: 100%;
       // max-width: 879px;

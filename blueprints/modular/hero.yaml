@@ -17,13 +17,24 @@ form:
               title: Hero Section
               underline: true
               fields:
+                header.hero.classes:
+                  label: Hero Style
+                  type: selectize
+                  selectize:
+                    options:
+                      - text: "Text left image right"
+                        value: "text_left__image_right"
+                      - text: "Text right image left"
+                        value: "text_right__image_left"
+                      - text: "Text image in center"
+                        value: "text_image_center"
                 header.hero.subtitle.translatable:
                   type: text
                   label: Hero Subtitle
                   classes: 'translatable'
-                header.hero.title.translatable:
+                header.hero.h1.translatable:
                   type: text
-                  label: Hero Title
+                  label: H1 Hero Header
                   classes: 'translatable'
                 header.hero.text.translatable:
                   type: textarea
@@ -32,8 +43,19 @@ form:
                 header.hero.image:
                     type: pagemediaselect
                     label: Hero image
-                    preview_images: true
+                header.hero.left_image_bg:
+                    type: pagemediaselect
+                    label: Hero left bg image
 
+                header.hero.hero_bg:
+                  type: pagemediaselect
+                  label: Hero background image
+                header.hero.size:
+                  type: select
+                  label: Hero size
+                  options:
+                    large: Large
+                    medium: Medium
                 header.hero.buttons:
                   type: list
                   label: Hero Buttons
@@ -46,28 +68,40 @@ form:
                     .link:
                       type: text
                       label: Button Link
-                    .btn_class:
-                      type: text
-                      label: Button Class
 
+                header.hero.hero_slider.isEnabled:
+                  type: toggle
+                  label: Is Slider Enabled?
+                  highlight: 1
+                  default: 1
+                  options:
+                      1: 'Yes'
+                      0: 'No'
+                  validate:
+                      type: bool
 
-                header.hero_blocks_section:
-                  type: section
-                  title: Hero Block 
-                  underline: false
-                  label: false
+                header.hero.hero_sliders:
+                  type: list
+                  label: Hero Sliders
                   fields:
-                    header.hero_blocks:
-                      type: list
-                      fields:
-                        .title.translatable:
-                          type: text
-                          label: Title
-                          classes: 'translatable'
-                        .description.translatable:
-                          type: textarea
-                          label: Description
-                          classes: 'translatable'
-                        .image:
-                          type: pagemediaselect
-                          label: Image
+
+                    .count.translatable:
+                      type: text
+                      label: Count
+                      classes: 'translatable'
+
+                    .title.translatable:
+                      type: text
+                      label: Title
+                      classes: 'translatable'
+
+                    .brief.translatable:
+                      type: text
+                      label: Brief
+
+                    .img:
+                      type: pagemediaselect
+                      label: image
+                      preview_images: true
+
+                      

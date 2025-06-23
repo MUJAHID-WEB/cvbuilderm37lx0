@@ -34,16 +34,19 @@
                         {% for section in page.header.about_sections %}
                             {% if section.description != '' and section.title != '' %}
                                 <div class="listing listing-horizontal {{ module.classes|replace({',' : ' '}) }}">
-                                    <div class="listing-icon">
+                                    {# <div class="listing-icon">
                                         {% set icon = page.media[section.icon] %}
                                         {% if icon %}
                                             <img class="icon" src="{{ icon.url }}"/>
                                         {% endif %}
-                                    </div>
+                                    </div> #}
 
                                     <div class="listing-content">
+                                        <h5>
+                                            {{ section.title.translatable }} 
+                                        </h5>
                                         <p>
-                                            <b>{{ section.title.translatable }}</b> {{ section.description.translatable }}
+                                            {{ section.description.translatable }}
                                         </p>
                                         {# <h5 class="listing-title">
                                             {{ section.title.translatable }}
@@ -62,30 +65,14 @@
 
                     {% if module.buttons %}
                         {% for button in module.buttons  %}
-                            <a class="listing_btn" href="{{ button.link }}">
-                             
-                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                                <circle cx="30" cy="30" r="30" fill="#0A5CD7"/>
-                                <circle cx="30" cy="30" r="29.5" stroke="#15301F" stroke-opacity="0.14"/>
-                                <g clip-path="url(#clip0_728_7733)">
-                                <path d="M42.5928 34.6916C40.7561 34.6916 38.9527 34.4043 37.2437 33.8395C36.4062 33.5539 35.3768 33.8159 34.8657 34.3409L31.4925 36.8873C27.5805 34.7991 25.1709 32.3902 23.1112 28.5076L25.5827 25.2223C26.2248 24.581 26.4551 23.6443 26.1791 22.7654C25.612 21.0474 25.3238 19.2448 25.3238 17.4073C25.3239 16.0799 24.244 15 22.9166 15H17.4073C16.0799 15 15 16.0799 15 17.4073C15 32.6221 27.378 45 42.5928 45C43.9202 45 45.0001 43.9201 45.0001 42.5927V37.0988C45 35.7715 43.9201 34.6916 42.5928 34.6916Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_728_7733">
-                                <rect width="30" height="30" fill="white" transform="translate(15 15)"/>
-                                </clipPath>
-                                </defs>
-                                </svg>
-                                <div class='btn_text'>
-                                    <p>
-                                        {{ button.text.translatable }}
-                                    </P>
-                                    <h5>
-                                        {{ webdata('support_phone') }}
-                                    </h5>
-                                </div>
-                        
-                            </a>
+                            <a class="button"
+                           href="/{{ grav.language.getActive }}{{ button.link }}">
+                            {{ button.text.translatable }}
+
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15.7071 6.29289C15.3166 5.90237 14.6834 5.90237 14.2929 6.2929C13.9024 6.68342 13.9024 7.31659 14.2929 7.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L14.2929 16.2929C13.9024 16.6834 13.9024 17.3166 14.2929 17.7071C14.6835 18.0976 15.3166 18.0976 15.7072 17.7071L20.7018 12.7124C20.7202 12.6942 20.738 12.6753 20.755 12.6558C20.8225 12.5781 20.8761 12.4926 20.9158 12.4024C20.9696 12.2801 20.9996 12.145 21 12.003V12C21 11.9969 21 11.9938 21 11.9907C20.9988 11.865 20.9745 11.7447 20.931 11.6341C20.8822 11.5098 20.8076 11.3933 20.7071 11.2929L15.7071 6.29289Z" fill="white"/>
+                            </svg>
+                        </a>
                            
                         {% endfor %}
                     {% endif %}

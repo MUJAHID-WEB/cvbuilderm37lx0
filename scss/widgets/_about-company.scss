@@ -1,211 +1,204 @@
-.about-company-wrapper{
-  background-color: #D4C305;
-  position: relative;
-  .img-top-left,
-  .img-top-right,
-  .img-bottom-right {
-    position: absolute;
-    overflow: hidden;
+.about-conpany-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: var(--color-secondary); 
+
+  @include desktop-small {
+    padding: 60px 0 52px;
   }
-  .img-top-left{
-    top: 2%;
-    left: -40px;
-    animation: rotateFull 10s linear 0s infinite forwards;
-  }
-  .img-top-right{
-    top: 0;
-    right: -40px;
-    animation: scale 10s linear 0s infinite forwards;
-  }
-  .img-bottom-right{
-    bottom: 0;
-    right: 0px;
-    animation: scale 10s linear 0s infinite forwards;
-  }
-  .img-bottom-right{
-    bottom: 0;
-    right: 0px;
-  }
-  .contents-wrapper{
-    padding: 5rem 0;
-    @include desktop-small{
-      padding: 40px 0;
-    }
-    .header-content{
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+   
+
+    .header-content {
       text-align: left;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      @include desktop-small{
+      gap: 170px;
+      width: 100%;
+
+      @include desktop-small {
+        text-align: left;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 24px;
       }
+
       h3 {
-        max-width: 520px;
-        // font-family: var(--secondary-font);
-        @include typography(display-lg, bold);
+        font-family: var(--secondary-font);
+        color: var(--color-text-dark);
+        @include typography(display-lg, medium);
+
         @include desktop-small {
-          max-width: unset;
           @include typography(display-md, medium);
         }
+
+ 
       }
-      h4{
-        color: var(--color-about-company-sub-title);
-        display: inline;
-        line-height: 28px; /* 155.556% */
-        @include typography(text-lg, semibold);
-        @include desktop-small {
-          @include typography(text-md, semibold);
-        }
-      }
-      p{
-        color: var(--color-text-light);
-        max-width: 494px;
-        @include desktop-small{
-          max-width: unset;
-        }
-      }
-    }
-    .text_left{
-      flex-direction: row;
-      @include desktop-small {
-        flex-direction: column-reverse;
-      }
-    
-    }
-    .text_right {
-      flex-direction: row-reverse;
-      @include desktop-small {
-        flex-direction: column-reverse;
-      }
-    } 
-    .company-contents{
-      display: flex;
-      align-items: stretch;
-      gap: 3rem;
-      padding-top: 4rem;
-      justify-content: space-between;
-      @include desktop-small {
-        justify-content: center;
-        gap: 22px;
-        padding-top: 1.5rem;
-      }
-      .contents-data{
+
+      .actions {
+        width: 49%;
         display: flex;
         flex-direction: column;
-      }
-      .contents{
-        flex-basis: 35%;
-        color: var(--text-text);
-        background-color: var(--color-white);
-        border-radius: 10px;
-        padding: 22px 26px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        gap: 24px;
+
         @include desktop-small {
-          padding: 20px;
-          gap: 36px;
+          width: 100%;
         }
-        .content-title {
-          @include typography(display-md,medium);
-          //font-family: var(--secondary-font);
-          margin-bottom: 1.5rem;
 
-          @include desktop-small {
-            @include typography(display-sm,medium);
-          }
-        }
-        .button {
-          align-self: flex-start;
-          display: flex;
-          align-items: center;
-          padding: 12px 20px;
-          @include typography('text-lg', extra_bold);
-          margin-top: 1.125rem;
-          border-radius: 10px;
-
-          background: var(--color-primary);
-          color: var(--color-white);
-          //-webkit-background-clip: text;
-          //-webkit-text-fill-color: transparent;
-        }
         p {
-          @include typography(text-lg, regular);
+          color: var(--color-text-light);
+          @include typography(text-md, regular);          
+
           @include desktop-small {
-            @include typography(text-md, regular);
+            text-align: left;
+            padding: 0;
           }
+
         }
-  
-        li {
-          @include typography(text-lg, regular);
+
+        .companion-btn {
+          padding: 16.041px 58.889px 15.645px 58.483px;
+          border-radius: 12.742px;
+          border: 2.125px solid var(--color-tertiary, #FBA93F);
+          background: var(--color-primary, linear-gradient(180deg, rgba(251, 169, 63, 0.90) 0%, rgba(240, 73, 54, 0.90) 100%));
+          text-decoration: none;
+          color: var(--color-white);
+          width: fit-content;
+          @include typography(text-lg, bold);
         }
-        .reviewers{
+
+      }
+
+      
+    }
+
+
+    .contents-wrapper {
+
+      background-image: url(../../images/about-company-bg.webp);
+      background-size: cover;
+      background-position: top left;
+      background-repeat: no-repeat;
+
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 40px 40px 0;
+      
+      .swiper-about-company {
+        width: 600px;
+        height: 415px;
+        padding: 40px;
+        border-radius: 20px;
+        background: var(--color-secondary);
+        position: relative;
+        margin-right: unset;
+        // z-index: 2;
+
+        .swiper-wrapper {
           display: flex;
-          align-items: center;
-          justify-content: start;
-          gap: 0.75rem;
-          padding: 10px;
-          background: var(--color-white);
-          border-radius: 20px;
-          @include desktop-small{
-            bottom: 15px;
-            right: 10px;
-          }
-          img{
-            flex: 0;
-          }
-          span{
-            @include typography(text-xl,semibold);
-            color: var(--color-text-light);
-            span{
-              @include typography(display-md,semibold);
-              color: var(--color-black);
-              text-transform: uppercase;
+        }
+
+        .swiper-slide {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 24px;
+          z-index: -1;
+
+          .head-content {
+            display: flex;
+            align-items: center;   
+            gap: 18px;
+
+            img {
+              width: 40px;
+              height: 40px;
+            }
+            
+            h5 {
+              color: var(--color-white);
+              @include typography('display-sm', semibold);
             }
           }
+
+          p {
+            color: var(--color-white);
+            @include typography('text-xl', regular);
+          }
         }
-      }
-      .image{
-        flex-basis: 70%;
-        text-align: center;
-        position: relative;
-        z-index: -1;
-        .main-img{
-          width: 100%;           
-        }
-        .img-on-content {
+
+
+        .navigations-custom-company {
           position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 1;
-          animation: rotateFull 5s linear 0s infinite forwards;
+          bottom: 100px !important;
+          right: 40px !important;
+          // transform: translateX(-50%);
+          width: 35%;
+          z-index: 15;
+
         }
-      }
+      }      
+    
     }
   }
 }
-/* ------------ Unique Design and animation for same module ---------------*/
-.about-company-in-home-page {
-.text_left {
-  @include desktop-small {
-    flex-direction: column !important;
+
+
+.swiper-about-company{ 
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    z-index: 5;
+
+    display: none !important;
   }
-}
-.button {
-  @include desktop-small{
-    left: 5%;
-    bottom: 0% !important;
-  }
-  
-}
-.image {
-  .main-img {
-    width: 60% !important;
+
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 0%;
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color,var(--swiper-theme-color));
+    width: 0;
+    height: 60px !important;
+    border-radius: 100%;
+    background: var(--color-gray);
+    margin: 0 0rem !important;
+
     @include desktop-small {
-      position: static;
-      width: 100%!important; 
+      width: auto;
+      height: 84px !important;
     }
   }
+
+  .swiper-button-next {
+    background: var(--color-primary) !important;  
+  }
+
+  .swiper-button-prev img {
+    // filter: brightness(0);
+  }
+
+  .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset,10px);
+    left: auto;
+  }
 }
-}
-/* ------------ End Unique Design and animation for same module ---------------*/

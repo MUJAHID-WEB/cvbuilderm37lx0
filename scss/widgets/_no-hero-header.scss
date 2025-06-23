@@ -1,9 +1,14 @@
+.page-about .no-hero-section {
+  display: none;
+}
+
+
 .no-hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 0 60px;
-  // background: var(--bg-secondary);
+  background: linear-gradient(194deg, #4E71FF -20.88%, #FFF 43.61%);
   // background-image: url(../../images/nohero/nohero_common.png);
   // background-repeat: no-repeat;
   // background-position: center;
@@ -24,9 +29,9 @@
   }
 
   .no-hero-wrapper {
-    background: var(--bg-secondary);
-    border-radius: 32px;
-    padding: 40px 60px 0;
+    // background: var(--bg-secondary);
+    // border-radius: 32px;
+    // padding: 40px 60px 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;

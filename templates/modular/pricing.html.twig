@@ -1,16 +1,31 @@
 {% extends 'partials/variables.html.twig' %}
 
-
 {% block render_block %}
 
-    {#  {% cache 'pricing-' ~ grav.language.getActive %} #}
+	{#  {% cache 'pricing-' ~ grav.language.getActive %} #}
+	{# {% set product_pricing = [] %} #}
+	{% set product_pricing = website_manager_api.getProductPricing %}
 
-     {% set product_pricing = website_manager_api.getProductPricing %}
 
-
-    {% set product_pricing = {
+	{% set product_pricing = {
         "data": {
             "products": [
+                {
+                    "package_name": "Starter Pack",
+                    "pricing_plan": {
+                    "subscription_price": 9,
+                    "currency": "USD",
+                    "subscription_interval_days": 14,
+                    "subscription_trial_days": 4,
+                    "price": 5.99
+                },
+                    "all_benefits": [
+                    "24/7 Customer Support",
+                    "Unlimited Data Usage",
+                    
+                ],
+                    "purchase_url": "https://join.carrerovl.com/en/c/Vlaskie_limited_signup?product_id=PROD61QIG"
+                },
                 {
                     "package_name": "Starter Pack",
                     "pricing_plan": {
@@ -47,40 +62,24 @@
                 }
             ]
         }
-    } %}  
+    } %}
 
 
-
-    <div class="pricings" id="modular_pricing"> 
-        <div class="container">
+		<div class="pricings" > <div class="container">
 			<div class="pricing-header">
-				{# <div class="subtitle">
-					<p>{{page.content|raw}}</p>
-				</div> #}
+				{# {% include 'widgets/badge.html.twig' %} #}
 				<h3 class="block-title">{{ page.title|striptags('<span>')|raw  }}</h3>
+				{{ page.content|raw }}
 			</div>
 		</div>
 
-		<div class="container">
-			<div
-				class="pricing-contents-wrapper">
-				{# <div class="pricing-image">
-					<img src="{{url('theme://images/pricing.png')}}"/>
-				</div> #}
-
-				<div class=" pricings-container">
-					{% if config.data.source == 'WSM' %}
-						{% include 'partials/product_pricing/pricing_wsm.html.twig' with {products: product_pricing.data } %}
-					{% else %}
-						{% include 'partials/product_pricing/pricing_crm.html.twig' with {products: product_pricing.data.products } %}
-					{% endif %}
-				</div>
-			</div>
+		<div class="container pricings-container" id="modular_pricing">
+			{% if config.data.source == 'WSM' %}
+				{% include 'partials/product_pricing/pricing_wsm.html.twig' with {products: product_pricing.data } %}
+			{% else %}
+				{% include 'partials/product_pricing/pricing_crm.html.twig' with {products: product_pricing.data.products } %}
+			{% endif %}
 		</div>
-
-
 	</div>
-    {#  {% endcache %} #}
+	{#  {% endcache %} #}
 {% endblock %}
-
-

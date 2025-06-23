@@ -1,72 +1,82 @@
 {% extends 'partials/variables.html.twig' %}
 
 {% set module = page.header.contents %}
-{% set features = page.header.about_company_features %}
-{% set image = page.media[module.image] %}
+{% set list_items = page.header.about_sections %}
+
 
 {% block render_block %}
-	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
+
+	<div class="about-conpany-section about-listing-animation {{ module.parent_classes }}" >
 		<div class="container">
 
-            <div class="contents-wrapper {{ module.child_classes }}">
+			<div class="wrapper">
 
-                <div class="header-content">
-                    {% if module.header_title != null %}
-                        <h3>{{ module.header_title.translatable|striptags('<span>')|raw }}</h3>
-                    {% endif %}
+				<div class="header-content">
+					<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
 
-                    {% if module.header_desc != null %}
-                        <p>{{ module.header_desc.translatable|raw }}</p>
-                    {% endif %}
-                </div>
+					<div class="actions">
 
-                <div class="company-contents {{ module.direction }}">
-                    <div class="contents">
-                        <div class="reviewers">
-                            <img src="{{ page.media[module.reviewers_thumbs].url }}" alt="Reviewers Thumbnails"/>
-                            <span>{{ module.reviewers_count.translatable|raw }}</span>
-                        </div>
-                        <div class="contents-data">
-                            {% if module.content_title != null %}
-                                <h3 class="content-title">{{ module.content_title.translatable|striptags('<span>')|raw }}</h3>
-                            {% endif %}
+						<p>{{ module.description.translatable|striptags('<span>')|raw }}</p>
+						<a href="{{ grav.language.active }}/contact" class="companion-btn">{{ module.btn_text.translatable }}</a>
+					</div>					
+				</div>
 
-                            <div class="">
-                                {{ page.content|raw }}
-                            </div>
+				<div class="contents-wrapper">					
 
-                            <!-- Button -->
+					<div class="swiper swiper-about-company">
+						<div class="swiper-wrapper">
+							{% for section in page.header.about_sections %}
+								<div class="swiper-slide">
+									<div class="head-content">
+										<span>
+											<img src="{{ page.media[section.icon].url }}" alt="Icon" />
+										</span>
+										<h5>{{ section.title.translatable }}</h5>
+									</div>									
+									<p>{{ section.description.translatable }}</p>	
+								</div>
+							{% endfor %}
+						</div>
+			
+						<div class="navigations-custom-company">						
+							<div class="swiper-button-next">
+								<img src="{{ url('theme://images/arrow-right.png') }}" />
+							</div>
+							<div class="swiper-button-prev">
+								<img src="{{ url('theme://images/arrow-left.svg') }}" />
+							</div>						
+						</div>
+					</div>
 
-                            {% if module.button_text.translatable != null %}
-                                <a href="/{{ grav.language.getActive }}{{ module.button_url }}" class="button button-outline about-company-btn">
-                                    {{ module.button_text.translatable }}
-                                </a>
-                            {% endif %}
-                        </div>
 
-                       
-                    </div>
+				</div>			
+			</div>
 
-                    {% if image != null %}
-                        <div class="image">
-                            {% if module.img_on_content != null %}  
-                                <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}" />
-                            {% endif %}
-
-                            <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
-
-                            {% if module.overlay_image != null %}  
-                                <img class="overlay-image" src="{{ page.media[module.overlay_image].url() }}" />
-                            {% endif %}
-                        </div>
-                    {% endif %}
-
-                    
-                </div>
-
-            </div>
-		
+			
 		</div>
-
 	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-about-company', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    autoplay: false,
+    centeredSlides: true,
+    rtl: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 1 },
+      992: { slidesPerView: 1 },
+    },
+  });
+</script>
+
+
 {% endblock %}
