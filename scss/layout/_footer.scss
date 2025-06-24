@@ -1,6 +1,6 @@
 .footer-section {
   overflow: hidden;
-  background: var(--bg-body);
+  background: var(--color-text-light);
   display: flex;
   padding: 124px 0 56px 0;
   justify-content: center;
@@ -380,9 +380,9 @@
 }
 
 
-
-.page-orders,
-.profile-page {
+.contact-page,
+.page-about,
+.page-home {
   .footer_top {
     display: flex;
   }
@@ -394,7 +394,7 @@
   padding: 60px 0;
   align-items: center;
   align-self: stretch;
-  // background-color: var(--color-secondary);
+  background-color: var(--color-black);
   position: relative;
   overflow: hidden;
 

@@ -1,9 +1,10 @@
 .cancel-membership-section, .unsubscribe-section {
   // background: var(--bg-body);
-  padding: 160px 0 100px;
+  background: linear-gradient(to bottom, var(--color-white) 31%, var(--color-black) 22%);
+  padding: 0 0 100px;
 
   @include desktop-small {
-    padding: 60px 0 60px 0;
+    padding: 0 0 40px 0;
     // margin-top: $header-gap-mobile;
   }
 
@@ -47,8 +48,9 @@
 
     button{
       background: var(--color-danger) !important;
-      width: fit-content !important;
+      width: 100% !important;
       padding: 12px 24px !important ;
+      color: var(--color-white) !important;
     }
 
     // .whq-card-content{

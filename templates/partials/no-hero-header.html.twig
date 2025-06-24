@@ -6,12 +6,12 @@
 		<div class="no-hero-wrapper">
 
 			<div class="head-content">
-
+{# 
 				{% if  noHeroContent.subtitle != null %}
 
 					<h4>{{ noHeroContent.subtitle.translatable|raw }}</h4>
 	
-				{% endif %}
+				{% endif %} #}
 
 				{% if  noHeroContent.title != null %}
 
@@ -65,8 +65,8 @@
 					</div>
 				{% endif %}
 			</div>
-			<!-- End head-content-->
-			{% if page.header.nohero_imgs %}
+		
+			{# {% if page.header.nohero_imgs %}
 				<div class="image-contents">
 					
 					{% for noHeroImg in page.header.nohero_imgs %}
@@ -80,8 +80,8 @@
 					
 				<img class="nohero_common" src="{{ url('theme://images/nohero/nohero_common.png') }}" alt="button icon">
 
-			</div>
+			</div> #}
 		</div>
-		<!-- End no-hero-wrapper -->
+	
 	</div>
 </section>

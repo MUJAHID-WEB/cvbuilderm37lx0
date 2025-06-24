@@ -1,16 +1,21 @@
-.forgot-section {
-  @include desktop-small {
-    // margin-top: $header-gap-mobile;
-  }
+.login-section {
+  background: linear-gradient(to bottom, var(--color-white) 42%, var(--color-black) 22%);
 }
 
-.login-section, .forgot-section {
+.forgot-section {
+  background: linear-gradient(to bottom, var(--color-white) 68%, var(--color-black) 22%);
+}
+
+
+
+.login-section, 
+.forgot-section {
   // border-radius: 8px;
-  background: var(--color-white);
-  padding: 80px 0;
+  // background: linear-gradient(to bottom, var(--color-white) 68%, var(--color-black) 22%);
+  padding: 0 0 100px;
 
   @include desktop-small {
-    padding: 60px 0;
+    padding: 0 0 40px;
 
   }
 
@@ -46,7 +51,7 @@
         line-height: 30px;
         margin-bottom: 10px;
         display: block;
-        color: var(--color-text-light);
+        color: var(--color-white);
 
         @include mobile{
           // font-size: 16px;
@@ -58,7 +63,7 @@
       }
     }
     label {
-      color: var(--color-text-light);
+      color: var(--color-white);
     }
 
 
@@ -114,7 +119,7 @@
           height: 16px;
           border-radius: 4px;
           background-color: transparent;
-          border: 1px solid var(--color-text-light);
+          border: 1px solid var(--color-white);
 
 
           &:checked {
@@ -159,7 +164,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: 30px;
-        color: var(--color-text-light);
+        color: var(--color-white);
         background-color: transparent;
 
         @include mobile {
@@ -181,7 +186,7 @@
           &:hover {
             box-shadow: none;
             transform: translateY(0);
-            color: var(--color-primary) !important;
+            color: var(--color-black) !important;
           }
         }
       }

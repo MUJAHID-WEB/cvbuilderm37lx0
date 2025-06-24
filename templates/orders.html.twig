@@ -1,0 +1,95 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set id = uri.query('id') ?? null %}
+{% set embed = uri.query('embed') ?? false %}
+{% set body_classes = 'bg-gray-50 page-orders' %}
+
+{% block render_block %}
+  {% if id and embed %}
+    {% include 'partials/order-iframe.html.twig' with { order_id: id } %}
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
+{% set links = [
+  {
+    'url': '/' ~ grav.language.getActive,
+    'title': "METRICALO.HOME"|t
+  },
+  {
+    'url': url(grav.language.getActive ~ '/profile'),
+    'title': 'METRICALO.PROFILE'|t
+  },
+  {
+    'title': 'METRICALO.MY_ORDERS'|t
+  }
+] %}
+
+{% if id %}
+  {% set links = [
+    {
+      'url': '/' ~ grav.language.getActive,
+      'title': "METRICALO.HOME"|t
+    },
+    {
+      'url': url(grav.language.getActive ~ '/profile'),
+      'title': 'METRICALO.PROFILE'|t
+    },
+    {
+      'url': url(grav.language.getActive ~ '/profile/orders'),
+      'title': 'METRICALO.MY_ORDERS'|t
+    },
+    {
+      'title': 'METRICALO.MY_ORDER'|t
+    }
+  ] %}
+{% endif %}
+
+{% block content %}
+
+
+  {% include 'partials/no-hero-header.html.twig' with {
+    'title': page.header.title,
+    'links': links
+  } %}
+<div class="max-w-6xl mx-auto rounded-lg shadow-2xl shadow-gray-300 border border-gray-200 p-12 orders-table-wrapper main-container">
+  {% if id %}
+    <iframe src="{{ page.url }}?id={{ id }}&embed=true" frameborder="0" width="100%" height="800"></iframe>
+  {% else %}
+    {% set invoices = website_manager_api.getInvoices(grav.user.data.customer_id) %}
+    <div class="order_table">
+      <table class="table orders-table slide-up animate" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+          <th>{{ 'METRICALO.ORDER_ID'|t }}</th>
+          <th>{{ 'METRICALO.PRODUCT'|t }}</th>
+          <th>{{ 'METRICALO.TYPE'|t }}</th>
+          <th>{{ 'METRICALO.TOTAL'|t }}</th>
+          <th>{{ 'METRICALO.STATUS'|t }}</th>
+          <th>{{ 'METRICALO.CREATED_AT'|t }}</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for invoice in invoices.data %}
+        <tr>
+          <td>{{ invoice.id }}</td>
+          <td>{{ invoice.product.name }}</td>
+          <td>{{ invoice.type }}</td>
+          <td>{{ invoice.total_incl_vat }} {{ invoice.currency }}</td>
+          <td>{{ invoice.status }}</td>
+          <td>{{ invoice.created_at|date('d/m/Y H:i:s') }}</td>
+          <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
+        </tr>
+      {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    
+  {% endif %}
+</div>
+{% endblock %}
+

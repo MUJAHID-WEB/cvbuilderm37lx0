@@ -10,10 +10,10 @@
   --color-tertiary: #FFF0B2;
 
   --bg-body: #0D0D0D;
-  // --bg-secondary: linear-gradient(178deg, #034ED2 -0.2%, #4D89E0 96.19%), #FFF;
+  --bg-secondary: linear-gradient(to bottom, var(--color-white) 22%, var(--color-black) 22%);
 
   --color-text-light: #212121;
-  --color-text-dark: #0D0D0D;
+  --color-text-dark: #080707;
   --border-color: rgba(255, 255, 255, 0.44);
 
   --color-Accent1: #6E64FF;

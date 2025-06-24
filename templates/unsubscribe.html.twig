@@ -5,7 +5,7 @@
 {% set unsub_content = homepage.header.unsub %}
 
 {% block article %}
-    {# {% set module = page.header %}
+    {% set module = page.header %}
         {% include 'partials/no-hero-header.html.twig' with {
             'title': "METRICALO.CANCEL_SUBSCRIPTION"|t,
             'links': [
@@ -17,7 +17,7 @@
                     'title': "METRICALO.CANCEL_SUBSCRIPTION"|t
                 }
             ]
-        } %} #}
+        } %}
 
     <div class="unsubscribe-section">
     <div class="container ">
