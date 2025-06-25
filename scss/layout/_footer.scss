@@ -457,8 +457,14 @@
       background-color: var(--color-primary);
       position: relative;
 
+      background-image: url("../../images/footer/footer_top_txt_bg.png"); 
+      background-repeat: no-repeat; 
+      background-size: 100% 100%;
+      background-position: center;
+
       @include desktop-small {
         // padding: 51px 20px 0;
+        background-image: url("../../images/footer/footer_top_txt_bg_mobile.png"); 
         width: 100%;
         gap: 5px;
         flex-direction: column-reverse;
