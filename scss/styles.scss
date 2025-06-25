@@ -420,3 +420,32 @@ ol, ul {
 // 		margin-top: 80px;
 // 	}
 // }
+
+
+.line-break {
+	display: block;
+
+	@include desktop-lg {
+		display: block;
+	}
+
+	@include desktop-small {
+		display: inline;
+	}
+
+	@include tablet {
+		display: inline;
+	}
+
+	@include mobile {
+		display: inline;
+	}
+
+	@include md-mobile {
+		display: inline;
+	}
+
+	@include sm-mobile {
+		display: inline;
+	}
+}

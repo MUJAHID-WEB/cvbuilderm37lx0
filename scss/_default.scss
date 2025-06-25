@@ -55,13 +55,13 @@ h3{
   }
 }
 
-h1 span,
-h2 span,
-h3 span,
-h4 span,
-h5 span,
-h6 span {
-  color: var(--color-secondary);
+h1 .special-color,
+h2 .special-color,
+h3 .special-color,
+h4 .special-color,
+h5 .special-color,
+h6 .special-color {
+  color: var(--color-primary);
 }
 
 .button {
