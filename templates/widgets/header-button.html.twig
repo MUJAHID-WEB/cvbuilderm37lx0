@@ -2,12 +2,12 @@
 <div class="header-buttons {{ login_order }}">
 
 	{% if grav.user.authenticated %}
-		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "VARIABLE.LOGOUT"|t }}</a>
 	{% else %}
-		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "VARIABLE.LOGIN"|t }}</a>
 
 		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">
-			<span>{{ "METRICALO.SIGNUP"|t }}</span>
+			<span>{{ "VARIABLE.SIGNUP"|t }}</span>
 		</a>
 		
 	{% endif %}
