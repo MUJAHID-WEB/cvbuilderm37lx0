@@ -1,23 +1,51 @@
 .hero-section {
-  background-image: url(../../images/hero/hero-bg.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top right;
-  padding: 13rem 0 0 0;
+  // background-image: url(../../images/hero/hero-bg.png);
+  // background-size: 45%;
+  // background-repeat: no-repeat;
+  // background-position: top right;
+  padding: 20rem 0 7rem 0;
+  position: relative;
+  overflow: hidden;
 
+
+  @include desktop-small {
+    background-image: url(../../images/hero/hero-bg-mobile.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 6rem 0 0rem 0;
+  }
+
+  .hero-bg-img {
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include desktop-small {
+      display: none;
+    }
+  }
 
   .wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;   
+    
+    @include desktop-small {
+      flex-direction: column;
+    }
 
     .contents-area {
+
       display: flex;
       flex-direction: column;
       width: 55%;
 
       @include desktop-small {
         width: 100%;
+        padding:  0 0 8rem 0;
       }
 
       .hero-title {
@@ -71,6 +99,7 @@
 
     .image-area {
       width: 45%;
+
       position: relative;
 
       @include desktop-small {
@@ -78,9 +107,16 @@
       }
 
       .main-img {
-        margin-left: 40%;
         z-index: 2;
-        position: relative;
+        position: absolute;
+        right: -30px;
+        bottom: -112px;
+        width: 100%;
+
+        @include desktop-small{
+          position: static
+        }
+        
       }
 
       .bg-img {
@@ -89,13 +125,21 @@
       }
 
       .bg-img-1 {
-        left: 44%;
-        top: 0%;
+        left: 2.5rem;
+        top: -29.5%;
+
+        @include desktop-small {
+          display: none;
+        }
       }
 
       .bg-img-2 {
-        bottom: 36%;
-        margin-left: 107%;
+        bottom: 47%;
+        right: -8%;
+
+        @include desktop-small {
+          display: none;
+        }
       }
 
 

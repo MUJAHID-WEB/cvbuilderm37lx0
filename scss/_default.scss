@@ -55,6 +55,15 @@ h3{
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font);
+}
+
 h1 .special-color,
 h2 .special-color,
 h3 .special-color,
@@ -62,6 +71,7 @@ h4 .special-color,
 h5 .special-color,
 h6 .special-color {
   color: var(--color-primary);
+  font-family: var(--secondary-font);
 }
 
 .button {

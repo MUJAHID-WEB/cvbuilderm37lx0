@@ -424,25 +424,26 @@ ol, ul {
 
 .line-break {
 	display: block;
+	font-family: var(--secondary-font);
 
 	@include desktop-lg {
 		display: block;
 	}
 
 	@include desktop-small {
-		display: inline;
+		display: block;
 	}
 
 	@include tablet {
-		display: inline;
+		display: block;
 	}
 
 	@include mobile {
-		display: inline;
+		display: block;
 	}
 
 	@include md-mobile {
-		display: inline;
+		display: block;
 	}
 
 	@include sm-mobile {

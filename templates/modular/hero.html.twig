@@ -4,9 +4,11 @@
 
 {% block render_block %}
 
-<section class="hero-section">
+<section class="hero-section">  
 
-  
+    <img class="hero-bg-img " src="{{ url('theme://images/hero/hero-bg.png') }}" alt="Hero Image" />
+
+
 
     <div class="container">
 
@@ -22,7 +24,7 @@
 
                 <div class="actions">
 
-                    <a class="hero-btn" href="#">
+                    <a class="hero-btn" href="#modular_pricing">
                         <span>
                             {{ contents.btn_text.translatable }}
                         </span>
@@ -40,10 +42,9 @@
               <div class="image-area">
                 <img class="main-img wow fadeInUp" src="{{ page.media[contents.main_img].url }}" alt="Hero Image" />
 
-                {# {% for item in contents.images %} #}
-                    <img class="bg-img bg-img-1 wow fadeInRight" src="{{ page.media[contents.images[0].img].url }}" alt="Hero Image 1" />
-                    <img class="bg-img bg-img-2 wow fadeInLeft" src="{{ page.media[contents.images[1].img].url }}" alt="Hero Image 2" />
-                {# {% endfor %} #}
+                <img class="bg-img bg-img-1 wow fadeInRight" src="{{ page.media[contents.images[0].img].url }}" alt="Hero Image 1" />
+                <img class="bg-img bg-img-2 wow fadeInLeft" src="{{ page.media[contents.images[1].img].url }}" alt="Hero Image 2" />
+         
 
             </div>
             
