@@ -34,17 +34,17 @@
                         {% for section in page.header.about_sections %}
                             {% if section.description != '' and section.title != '' %}
                                 <div class="listing listing-horizontal {{ module.classes|replace({',' : ' '}) }}">
-                                    {# <div class="listing-icon">
+                                    <div class="listing-icon">
                                         {% set icon = page.media[section.icon] %}
                                         {% if icon %}
                                             <img class="icon" src="{{ icon.url }}"/>
                                         {% endif %}
-                                    </div> #}
+                                    </div>
 
                                     <div class="listing-content">
-                                        <h5>
+                                        {# <h5>
                                             {{ section.title.translatable }} 
-                                        </h5>
+                                        </h5> #}
                                         <p>
                                             {{ section.description.translatable }}
                                         </p>
@@ -70,7 +70,7 @@
                             {{ button.text.translatable }}
 
                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M15.7071 6.29289C15.3166 5.90237 14.6834 5.90237 14.2929 6.2929C13.9024 6.68342 13.9024 7.31659 14.2929 7.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L14.2929 16.2929C13.9024 16.6834 13.9024 17.3166 14.2929 17.7071C14.6835 18.0976 15.3166 18.0976 15.7072 17.7071L20.7018 12.7124C20.7202 12.6942 20.738 12.6753 20.755 12.6558C20.8225 12.5781 20.8761 12.4926 20.9158 12.4024C20.9696 12.2801 20.9996 12.145 21 12.003V12C21 11.9969 21 11.9938 21 11.9907C20.9988 11.865 20.9745 11.7447 20.931 11.6341C20.8822 11.5098 20.8076 11.3933 20.7071 11.2929L15.7071 6.29289Z" fill="white"/>
+                                <path d="M15.7071 6.29289C15.3166 5.90237 14.6834 5.90237 14.2929 6.2929C13.9024 6.68342 13.9024 7.31659 14.2929 7.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L14.2929 16.2929C13.9024 16.6834 13.9024 17.3166 14.2929 17.7071C14.6835 18.0976 15.3166 18.0976 15.7072 17.7071L20.7018 12.7124C20.7202 12.6942 20.738 12.6753 20.755 12.6558C20.8225 12.5781 20.8761 12.4926 20.9158 12.4024C20.9696 12.2801 20.9996 12.145 21 12.003V12C21 11.9969 21 11.9938 21 11.9907C20.9988 11.865 20.9745 11.7447 20.931 11.6341C20.8822 11.5098 20.8076 11.3933 20.7071 11.2929L15.7071 6.29289Z" fill="black"/>
                             </svg>
                         </a>
                            
@@ -85,12 +85,12 @@
                             <img src="{{ image_large.url }}" alt="single Image"/>
                         {% endif %}
 
-                        <div class="single_img_content">
+                        {# <div class="single_img_content">
                             <h4>{{ module.img_title.translatable|striptags('<span>')|raw }}</h4>
                             <p>{{ module.img_description.translatable}}</p>
-                        </div>
+                        </div> #}
                     </div>
-
+{# 
                     <div class="double_img">
                         {% if image_left %}
                             <img class="image_left" src="{{ image_left.url }}" alt="left Image"/>
@@ -99,7 +99,7 @@
                         {% if image_right %}
                             <img class="image_right" src="{{ image_right.url }}" alt="right Image"/>
                         {% endif %}
-                    </div>
+                    </div> #}
 
                 </div>
 
