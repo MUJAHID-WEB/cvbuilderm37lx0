@@ -14,7 +14,7 @@
     gap: 60px;
 
     @include desktop-small {
-     gap: 18px;
+      gap: 18px;
     }
 
     .header-content {
@@ -119,6 +119,7 @@
         @include tablet {
           margin-right: auto;
           padding: 24px 16px;
+          height: 390px;
         }
 
         .swiper-wrapper {
@@ -180,6 +181,11 @@
           width: 35%;
           z-index: 15;
 
+          @include desktop-small {
+            bottom: 77px !important;
+            right: 37px !important;
+          }
+
         }
       }
 
@@ -232,7 +238,7 @@
   .swiper-button-next {
     background: var(--color-primary) !important;
 
-     @include desktop-small {
+    @include desktop-small {
 
       left: -70%;
     }
