@@ -12,12 +12,12 @@
 			<div class="wrapper">
 
 				<div class="header-content">
-					<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+					<h3 class="wow bounceInLeft">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
 
 					<div class="actions">
 
-						<p>{{ module.description.translatable|striptags('<span>')|raw }}</p>
-						<a href="{{ grav.language.active }}/contact" class="button">
+						<p class="wow bounceInRight">{{ module.description.translatable|striptags('<span>')|raw }}</p>
+						<a href="{{ grav.language.active }}/contact" class="button wow bounceInRight">
 						{{ module.btn_text.translatable }}
 
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

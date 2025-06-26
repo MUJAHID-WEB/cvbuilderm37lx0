@@ -13,7 +13,7 @@
 
             <div class="contents-wrapper {{ module.child_classes }}">
 
-                <div class="listing-contents">
+                <div class="listing-contents wow slideInRight">
                     <div class="header-content">
                         
                         <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
@@ -79,7 +79,7 @@
                     
                 </div>
 
-                <div class="image-container">
+                <div class="image-container wow slideInLeft">
                     <div class="single_img">
                         {% if image_large %}
                             <img src="{{ image_large.url }}" alt="single Image"/>

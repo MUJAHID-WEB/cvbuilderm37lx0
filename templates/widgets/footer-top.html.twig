@@ -8,12 +8,12 @@
 	<div class="footer_top">
 		<div class="container">
 			<div class="title_btn">
-				<h1 class="offer-title">
+				<h1 class="offer-title wow fadeInLeftBig">
 					{{ module.h1.translatable|striptags('<span>')|raw }}
 				</h1>
 
 				{% for button in module.buttons  %}
-					<a class="button " href="/{{ grav.language.getActive }}{{ button.link }}">
+					<a class="button wow fadeInRightBig" href="/{{ grav.language.getActive }}{{ button.link }}">
 
 					{{ button.text.translatable }}
 
@@ -36,8 +36,13 @@
 		
 
 				<div class="offer-content"> 
-					
-					<img src="{{ url('theme://images/footer/footer_top_text.png') }}" />
+		
+					<div class="owl-carousel banner-slider">
+						<div class="item">
+							<img src="/user/sites/cvbuilderm37lx0/themes/cvbuilderm37lx0/images/footer/footer_top_text.png" alt="Banner Slide">
+						</div>
+				
+					</div>
 
 					<p class="">{{ module.text.translatable }}</p>
 
@@ -49,5 +54,7 @@
 
 		</div>
 	</div>
+
+
 {% endblock %}
 

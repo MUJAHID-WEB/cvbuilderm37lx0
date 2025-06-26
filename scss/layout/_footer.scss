@@ -479,6 +479,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        z-index: 2;
 
         @include desktop-small {
           position: unset;
@@ -506,6 +507,7 @@
         gap: 24px;
         padding: 31px 0 45px;
         flex: 2.1;
+        overflow: hidden;
 
         @include desktop-small {
           // text-align: center;
@@ -514,8 +516,9 @@
         
         }
 
-        img{
+        .banner-slider .item img{
           width: 100%;
+          animation: scroll-left 15s linear infinite;
         }
 
      
@@ -543,5 +546,16 @@
 
     }
 
+  }
+}
+
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

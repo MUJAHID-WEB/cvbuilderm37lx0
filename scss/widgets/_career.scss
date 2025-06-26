@@ -21,15 +21,15 @@
       gap: 207px;
       width: 100%;
 
-      @include desktop-xl {
-          flex-direction: column;
-          gap: 24px;
-        }
+      // @include desktop-xl {
+      //     flex-direction: column;
+      //     gap: 24px;
+      //   }
 
-       @include desktop-lg {
-          flex-direction: column;
-          gap: 24px;
-        }
+      //  @include desktop-lg {
+      //     flex-direction: column;
+      //     gap: 24px;
+      //   }
         
       @include desktop-small {
         flex-direction: column;
