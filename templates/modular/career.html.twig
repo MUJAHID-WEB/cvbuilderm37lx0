@@ -1,0 +1,98 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set contents = page.header.contents %}
+{% set resume = contents.resume %}
+{% set job_seeker = contents.job_seeker %}
+{% set users = contents.users %}
+{% set results = contents.results %}
+
+{% block render_block %}
+
+<section class="career-section" id="career-section">
+	<div class="container">
+		<div class="career-wrapper">
+
+			<div class="career-header">
+				{% if contents.title != null %}
+					<h3 class="section-title">{{ contents.title.translatable|raw }}</h3>
+				{% endif %}
+
+				<div class="description">
+					{% if contents.description %}
+						<p class="brief">{{ contents.description.translatable }}</p>
+					{% endif %}
+
+				</div>
+			</div>
+
+			<div class="contents-area">
+			
+				<div class="contents">
+
+					<div class="top-area">
+
+						<div class="left-area resume">
+
+							<span>
+								<img src="{{ page.media[resume.icon].url }}" alt="Icon" />
+							</span>
+
+							<h3>{{ resume.title.translatable }}</h3>
+							<p>{{ resume.brief.translatable }}</p>		
+						
+						</div>
+
+						<div class="right-area">
+
+							<div class="top job-seeker">
+
+								<h3>{{ job_seeker.title.translatable }}</h3>
+								<p>{{ job_seeker.brief.translatable }}</p>	
+							
+							</div>
+
+							<div class="bottom users">
+
+								<h3>{{ users.title.translatable }}</h3>
+								<p>{{ users.brief.translatable }}</p>	
+							
+							</div>
+						
+						</div>
+
+					
+					</div>
+
+					<div class="bottom-area results">
+						<span>
+							<img src="{{ page.media[results.icon].url }}" alt="Icon" />
+						</span>
+						<h3>{{ results.title.translatable }}</h3>
+						<p>{{ results.brief.translatable }}</p>
+
+						<div class="actions">
+							<a href="#modular_pricing" class="career-btn">{{ results.btn_text.translatable }}</a>
+						</div>		
+
+					</div>
+
+				</div>
+
+				<div class="video-area">
+					<video autoplay muted loop poster="{{ page.media[contents.poster].url }}" width="100%">
+						<source src="{{ url('theme://images/career/career_video.mp4') }}" type="video/mp4">
+						<source src="{{ url('theme://images/career/career_video.mp4') }}" type="video/ogg">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+
+			</div>
+
+		
+			
+		</div>
+	</div>
+</section>
+
+{% endblock %}
