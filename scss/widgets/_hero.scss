@@ -18,12 +18,92 @@
     }
 
     @include desktop-small {
-    background-image: url(../../images/hero/about-hero-bg-mobile.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding: 6rem 0 55rem 0;
-  }
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 130rem 0;
+    }
+
+    @include xl-tablet {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 124rem 0;
+    }
+
+    @include lg-tablet {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 111rem 0;
+    }
+
+    @include tablet {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 98rem 0;
+    }
+
+    @include md-tablet {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 89rem 0;
+    }
+
+    @include sm-tablet {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 81rem 0;
+    }
+
+    @include mobile {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 73rem 0;
+    }
+
+    @include md-mobile {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 62rem 0;
+    }
+
+    @include sm-md-mobile {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 55rem 0;
+    }
+
+    @include sm-mobile {
+      background-image: url(../../images/hero/about-hero-bg-mobile.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 6rem 0 51rem 0;
+    }
+
+    .wrapper {
+      .contents-area {
+        @include desktop-small {
+          padding: 0;
+        }
+      }
+    }
 
   }
 

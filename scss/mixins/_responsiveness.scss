@@ -4,6 +4,12 @@
   }
 }
 
+@mixin sm-md-mobile {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
 
 @mixin md-mobile {
   @media (max-width: 480px) {
@@ -17,11 +23,36 @@
   }
 }
 
+@mixin sm-tablet {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin md-tablet {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: 768px) {
     @content;
   }
 }
+
+@mixin lg-tablet {
+  @media (max-width: 868px) {
+    @content
+  }
+}
+
+@mixin xl-tablet {
+  @media (max-width: 968px) {
+    @content
+  }
+}
+
 
 @mixin desktop-small {
   @media (max-width: 1024px) {
