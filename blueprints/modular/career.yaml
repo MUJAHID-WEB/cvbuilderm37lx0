@@ -1,0 +1,94 @@
+title: Career
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            module_section:
+              ordering@: 3
+              type: section
+              title: Module blocks
+              underline: true
+              fields:             
+                header.contents.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+
+                header.contents.description.translatable:
+                  type: textarea
+                  label: Description
+                  classes: 'translatable'
+                  rows: 10
+
+                header.contents.resume.title.translatable:
+                  type: text
+                  label: Resume Title
+                  classes: 'translatable'
+
+                header.contents.resume.brief.translatable:
+                  type: textarea
+                  label: Resume Brief
+                  classes: 'translatable'
+
+                header.contents.resume.icon:
+                  type: pagemediaselect
+                  label: Resume Icon
+                  preview_images: true
+
+                header.contents.job_seeker.title.translatable:
+                  type: text
+                  label: Job Seeker Title
+                  classes: 'translatable'
+
+                header.contents.job_seeker.brief.translatable:
+                  type: textarea
+                  label: Job Seeker Brief
+                  classes: 'translatable'
+
+                header.contents.users.title.translatable:
+                  type: text
+                  label: Users Title
+                  classes: 'translatable'
+
+                header.contents.users.brief.translatable:
+                  type: textarea
+                  label: Users Brief
+                  classes: 'translatable'
+
+                header.contents.results.title.translatable:
+                  type: text
+                  label: Results Title
+                  classes: 'translatable'
+
+                header.contents.results.brief.translatable:
+                  type: textarea
+                  label: Results Brief
+                  classes: 'translatable'
+
+                header.contents.results.icon:
+                  type: pagemediaselect
+                  label: Results Icon
+                  preview_images: true
+
+                header.contents.results.btn_text.translatable:
+                  type: text
+                  label: Results BTN Text
+                  classes: 'translatable'
+
+                header.contents.poster:
+                  type: pagemediaselect
+                  label: Poster
+                  preview_images: true
+
+            header.media_order:
+                ordering@: 99
+
+
+
+
+

@@ -1,0 +1,266 @@
+.career-section {
+  padding: 100px 0;
+  background: var(--bg-body);
+
+  @include desktop-small {
+    padding: 80px 0;
+  }
+
+  .career-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include desktop-small {
+      gap: 60px;
+    }
+
+    .career-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 207px;
+      width: 100%;
+
+      @include desktop-xl {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+       @include desktop-lg {
+          flex-direction: column;
+          gap: 24px;
+        }
+        
+      @include desktop-small {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .section-title {
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 60px; /* 125% */
+        letter-spacing: -0.96px;
+        width: 90%;
+        color: var(--color-white);
+
+        @include desktop-small {
+          font-size: 36px;
+          line-height: 44px; /* 122.222% */
+          letter-spacing: -0.72px;
+           width: 100%;
+        }
+      }
+
+      .description {
+        p {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 30px; /* 150% */
+          color: var(--color-white);
+
+          @include desktop-small{
+            font-size: 18px;
+            line-height: 28px; /* 155.556% */
+          }
+        }
+      }
+    }
+
+    .contents-area {   
+      display: flex;  
+      justify-content: space-between; 
+      width: 100%;
+      align-items: stretch;
+
+      @include desktop-small{
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .contents {
+        display: flex;
+        flex-direction: column;
+        width: 58%;
+        gap: 24px;
+
+        @include desktop-small{
+          width: 100%;
+        }
+
+        .top-area {
+          display: flex;
+          gap: 20px;
+
+          @include desktop-small {
+            flex-direction: column;
+          }
+
+          .left-area{
+            display: flex;
+            flex-direction: column;
+            background: var(--color-primary);
+            width: 50%;
+            border-radius: 20px;
+            padding: 2rem;
+
+            @include desktop-small{
+              width: 100%;
+              padding: 1.5rem;
+            }
+
+            h3 {
+              font-size: 30px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 38px; /* 126.667% */
+              color: var(--color-white);
+              margin: 18px 0 12px 0;
+            }
+
+            p {
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 24px; /* 150% */
+              color: var(--color-white);
+            }
+          }
+
+          .right-area{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .job-seeker {
+              background: var(--color-white);
+              border-radius: 20px;
+              padding: 2rem;
+              text-align: center;
+
+              h3 {
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 72px; /* 120% */
+                letter-spacing: -1.2px;
+                color: var(--color-black);
+                
+              }
+
+              p {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 24px; /* 150% */
+                color: var(--color-black);
+
+                @include desktop-small{
+                  font-size: 20px;
+                  font-weight: 400;
+                  line-height: 30px; /* 150% */
+                }
+              }
+            }
+
+            .users {
+              background: var(--color-white);
+              border-radius: 20px;
+              padding: 2rem;
+              text-align: center;
+
+              h3 {
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 72px; /* 120% */
+                letter-spacing: -1.2px;
+                color: var(--color-black);
+              }
+
+              p {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 24px; /* 150% */
+                color: var(--color-black);
+
+                @include desktop-small{
+                  font-size: 20px;
+                  font-weight: 400;
+                  line-height: 30px; /* 150% */
+                }
+              }
+            }
+
+            
+
+          }
+        }
+
+        .bottom-area {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+          background: var(--color-white);
+          border-radius: 20px;
+          padding: 3rem 2rem;
+
+          h3 {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 38px; /* 126.667% */
+
+          }
+          p {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 150% */
+          }
+
+          .actions {
+            margin-top: 18px;
+
+            .career-btn {
+              text-decoration: none;
+              color: var(--color-white);
+              padding: 16px 28px;
+
+              border-radius: 12px;
+              background: var(--color-primary, #4E71FF);
+
+              /* Shadow/xs */
+              box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+
+            }
+          }
+        }
+      }
+
+      .video-area {
+        width: 40%;
+
+        @include desktop-small{
+          width: 100%;
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+
+    }
+  }
+}
