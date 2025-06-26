@@ -42,8 +42,8 @@ form:
                       type: text
                       label: Title
 
-                    .brief.translatable:
-                      type: textarea
+                    .btn.translatable:
+                      type: text
                       label: Brief 
 
                     .img:
