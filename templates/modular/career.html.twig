@@ -12,14 +12,14 @@
 	<div class="container">
 		<div class="career-wrapper">
 
-			<div class="career-header">
+			<div class="career-header ">
 				{% if contents.title != null %}
-					<h3 class="section-title">{{ contents.title.translatable|raw }}</h3>
+					<h3 class="section-title wow bounceInLeft">{{ contents.title.translatable|raw }}</h3>
 				{% endif %}
 
-				<div class="description">
+				<div class="description wow bounceInRight">
 					{% if contents.description %}
-						<p class="brief">{{ contents.description.translatable }}</p>
+						<p class="brief ">{{ contents.description.translatable }}</p>
 					{% endif %}
 
 				</div>
@@ -31,7 +31,7 @@
 
 					<div class="top-area">
 
-						<div class="left-area resume">
+						<div class="left-area resume wow fadeInLeft">
 
 							<span>
 								<img src="{{ page.media[resume.icon].url }}" alt="Icon" />
@@ -44,14 +44,14 @@
 
 						<div class="right-area">
 
-							<div class="top job-seeker">
+							<div class="top job-seeker wow fadeInDown">
 
 								<h3>{{ job_seeker.title.translatable }}</h3>
 								<p>{{ job_seeker.brief.translatable }}</p>	
 							
 							</div>
 
-							<div class="bottom users">
+							<div class="bottom users wow fadeInUp">
 
 								<h3>{{ users.title.translatable }}</h3>
 								<p>{{ users.brief.translatable }}</p>	
@@ -63,7 +63,7 @@
 					
 					</div>
 
-					<div class="bottom-area results">
+					<div class="bottom-area results wow fadeInUp">
 						<span>
 							<img src="{{ page.media[results.icon].url }}" alt="Icon" />
 						</span>

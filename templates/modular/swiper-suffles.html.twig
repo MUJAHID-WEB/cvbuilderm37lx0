@@ -11,12 +11,12 @@
 		<div class="swiper-suffle-wrapper">
 
 			<div class="offer-content"> 
-				<h1 class="section-title">
+				<h1 class="section-title wow fadeInDownBig">
 					{{ contents.title.translatable|striptags('<span>')|raw }}
 				</h1>
-				<p class="brief">{{ contents.brief.translatable }}</p>
+				<p class="brief wow flipInX">{{ contents.brief.translatable }}</p>
 
-				<a class="button" href="{{ grav.language.active }}/about">
+				<a class="button wow fadeInUpBig" href="{{ grav.language.active }}/about">
 				{{ contents.btn_text.translatable }}
 				</a>
 

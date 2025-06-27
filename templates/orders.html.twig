@@ -15,14 +15,14 @@
 {% set links = [
   {
     'url': '/' ~ grav.language.getActive,
-    'title': "METRICALO.HOME"|t
+    'title': "VARIABLE.HOME"|t
   },
   {
     'url': url(grav.language.getActive ~ '/profile'),
-    'title': 'METRICALO.PROFILE'|t
+    'title': 'VARIABLE.PROFILE'|t
   },
   {
-    'title': 'METRICALO.MY_ORDERS'|t
+    'title': 'VARIABLE.MY_ORDERS'|t
   }
 ] %}
 
@@ -30,18 +30,18 @@
   {% set links = [
     {
       'url': '/' ~ grav.language.getActive,
-      'title': "METRICALO.HOME"|t
+      'title': "VARIABLE.HOME"|t
     },
     {
       'url': url(grav.language.getActive ~ '/profile'),
-      'title': 'METRICALO.PROFILE'|t
+      'title': 'VARIABLE.PROFILE'|t
     },
     {
       'url': url(grav.language.getActive ~ '/profile/orders'),
-      'title': 'METRICALO.MY_ORDERS'|t
+      'title': 'VARIABLE.MY_ORDERS'|t
     },
     {
-      'title': 'METRICALO.MY_ORDER'|t
+      'title': 'VARIABLE.MY_ORDER'|t
     }
   ] %}
 {% endif %}
@@ -62,12 +62,12 @@
       <table class="table orders-table slide-up animate" cellpadding="0" cellspacing="0">
         <thead>
         <tr>
-          <th>{{ 'METRICALO.ORDER_ID'|t }}</th>
-          <th>{{ 'METRICALO.PRODUCT'|t }}</th>
-          <th>{{ 'METRICALO.TYPE'|t }}</th>
-          <th>{{ 'METRICALO.TOTAL'|t }}</th>
-          <th>{{ 'METRICALO.STATUS'|t }}</th>
-          <th>{{ 'METRICALO.CREATED_AT'|t }}</th>
+          <th>{{ 'VARIABLE.ORDER_ID'|t }}</th>
+          <th>{{ 'VARIABLE.PRODUCT'|t }}</th>
+          <th>{{ 'VARIABLE.TYPE'|t }}</th>
+          <th>{{ 'VARIABLE.TOTAL'|t }}</th>
+          <th>{{ 'VARIABLE.STATUS'|t }}</th>
+          <th>{{ 'VARIABLE.CREATED_AT'|t }}</th>
           <th></th>
         </tr>
         </thead>
@@ -81,7 +81,7 @@
           <td>{{ invoice.total_incl_vat }} {{ invoice.currency }}</td>
           <td>{{ invoice.status }}</td>
           <td>{{ invoice.created_at|date('d/m/Y H:i:s') }}</td>
-          <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
+          <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'VARIABLE.VIEW_INVOICE'|t }}</a></td>
         </tr>
       {% endfor %}
 

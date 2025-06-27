@@ -22,7 +22,7 @@
         'links': [
             {
                 'url': '/' ~ grav.language.getActive,
-                'title': "METRICALO.HOME"|t
+                'title': "VARIABLE.HOME"|t
             },
             {
                 'title': page.header.title
@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="paragraph-column">
                     <h2 class="text-4xl font-bold mb-8 text-brand">
-                       {# {{ 'METRICALO.PROFILE'|t }} #}
+                       {# {{ 'VARIABLE.PROFILE'|t }} #}
                         {{ title }}
                     </h2>
                     {% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
@@ -53,14 +53,14 @@
                             {# <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
                                 <path d="M8.76037 7.19801L8.75936 7.19694L2.84018 1.30631C2.39674 0.865025 1.6795 0.866667 1.2381 1.31016C0.796758 1.7536 0.798458 2.47084 1.2419 2.91219L5.21603 6.86706C6.09265 7.74368 6.09265 8.25602 5.21598 9.13269L1.24195 13.0876C0.798514 13.5289 0.796816 14.2461 1.23816 14.6896C1.67956 15.1331 2.39686 15.1347 2.84024 14.6934L8.75941 8.80281L8.76043 8.80174C9.2041 8.35892 9.20268 7.63936 8.76037 7.19801Z" fill="white"/>
                             </svg> #}
-                            {{ 'METRICALO.CHANGE_PASSWORD'|t }}
+                            {{ 'VARIABLE.CHANGE_PASSWORD'|t }}
                         </a>
                         <button form="user-profile" type="submit" class="button primary">
                             {# <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
                                 <path d="M8.76037 7.19801L8.75936 7.19694L2.84018 1.30631C2.39674 0.865025 1.6795 0.866667 1.2381 1.31016C0.796758 1.7536 0.798458 2.47084 1.2419 2.91219L5.21603 6.86706C6.09265 7.74368 6.09265 8.25602 5.21598 9.13269L1.24195 13.0876C0.798514 13.5289 0.796816 14.2461 1.23816 14.6896C1.67956 15.1331 2.39686 15.1347 2.84024 14.6934L8.75941 8.80281L8.76043 8.80174C9.2041 8.35892 9.20268 7.63936 8.76037 7.19801Z" fill="white"/>
                             </svg> #}
 
-                            {{ 'METRICALO.EDIT_PROFILE'|t }}
+                            {{ 'VARIABLE.EDIT_PROFILE'|t }}
                         </button>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
 
                     <div class="mb-8 content-section">
                         <a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
-                            <span>{{ 'METRICALO.MY_ORDERS'|t }}</span>
+                            <span>{{ 'VARIABLE.MY_ORDERS'|t }}</span>
 
                             {# <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" viewBox="0 0 7 14" fill="none">
@@ -82,7 +82,7 @@
                         {# <svg xmlns="http://www.w3.org/2000/svg" width="104" height="2" viewBox="0 0 104 2" fill="none">
                             <path d="M1 1H103" stroke="#8F8F8F" stroke-linecap="round"/>
                         </svg> #}
-                        {{ 'METRICALO.SUBSCRIPTION'|t }}
+                        {{ 'VARIABLE.SUBSCRIPTION'|t }}
                         {# <svg xmlns="http://www.w3.org/2000/svg" width="104" height="2" viewBox="0 0 104 2" fill="none">
                             <path d="M1 1H103" stroke="#8F8F8F" stroke-linecap="round"/>
                         </svg> #}

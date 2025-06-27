@@ -7,14 +7,14 @@
 {% block article %}
     {% set module = page.header %}
         {% include 'partials/no-hero-header.html.twig' with {
-            'title': "METRICALO.CANCEL_SUBSCRIPTION"|t,
+            'title': "VARIABLE.CANCEL_SUBSCRIPTION"|t,
             'links': [
                 {
                     'url': '/',
-                    'title': "METRICALO.HOME"|t
+                    'title': "VARIABLE.HOME"|t
                 },
                 {
-                    'title': "METRICALO.CANCEL_SUBSCRIPTION"|t
+                    'title': "VARIABLE.CANCEL_SUBSCRIPTION"|t
                 }
             ]
         } %}
@@ -23,7 +23,7 @@
     <div class="container ">
         {% embed "widgets/whq-card.html.twig" %}
             {% block card_title %}
-                {{ "METRICALO.ARE_YOU_SURE_CANCELLATION"|t }}
+                {{ "VARIABLE.ARE_YOU_SURE_CANCELLATION"|t }}
             {% endblock %}
 
             {% block card_image %}
